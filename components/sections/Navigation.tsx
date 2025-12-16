@@ -32,7 +32,7 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop Nav Links */}
-          <div className="hidden items-center gap-6 text-sm font-medium text-gray-500 md:flex">
+          <div className="hidden items-center gap-6 text-sm font-medium text-[#0D1A12] md:flex">
             {navLinks.map((item) => (
               <Link
                 key={item.name}
@@ -47,7 +47,7 @@ export default function Navigation() {
 
         {/* Right Actions */}
         <div className="flex items-center gap-2">
-          <Link href="#docs" className="hidden px-4 py-2 text-sm font-semibold text-gray-600 hover:text-black transition-colors sm:inline">
+          <Link href="#docs" className="hidden px-4 py-2 text-sm font-semibold text-[#0D1A12] hover:text-black transition-colors sm:inline">
             Docs
           </Link>
           <Button className="h-10 rounded-full bg-black hover:bg-black/80 text-white px-5 text-sm font-bold shadow-lg transition-all hover:scale-105 hidden sm:flex">
@@ -72,7 +72,7 @@ export default function Navigation() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="px-4 py-3 text-lg font-medium text-gray-800 rounded-xl hover:bg-black/5 transition-colors"
+                className="px-4 py-3 text-lg font-medium text-[#0D1A12] rounded-xl hover:bg-black/5 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.name}
@@ -81,7 +81,7 @@ export default function Navigation() {
             <div className="h-px bg-gray-100 my-2" />
             <Link
               href="#docs"
-              className="px-4 py-3 text-lg font-medium text-gray-800 rounded-xl hover:bg-black/5 transition-colors"
+              className="px-4 py-3 text-lg font-medium text-[#0D1A12] rounded-xl hover:bg-black/5 transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Documentation

@@ -1,8 +1,7 @@
 
 import { Button } from "@/components/ui/button";
-import { Apple, Play, Battery, Signal, Wifi, ChevronDown, Bell, ScanLine } from "lucide-react";
+import { Apple, Play, Battery, Signal, Wifi, ChevronDown, Bell, ScanLine, Filter, Clock } from "lucide-react";
 
-// 1. The Internal App UI (Reused for all phones)
 // 1. The Internal App UI (Reused for all phones)
 function PhoneContent({ isDark = false }: { isDark?: boolean }) {
   const bgClass = isDark ? "bg-[#0C110F] text-white" : "bg-white text-black";
@@ -25,59 +24,61 @@ function PhoneContent({ isDark = false }: { isDark?: boolean }) {
       <div className="px-6 pb-2 pt-8 flex justify-between items-start">
         <div className="flex items-center gap-3">
           <div className={`size-10 rounded-full flex items-center justify-center text-base shadow-sm ${isDark ? "bg-gray-800 text-white" : "bg-gray-100 text-black border border-gray-200"}`}>
-            💰
+            ⚖️
           </div>
           <div className="text-left">
             <div className="flex items-center gap-1 text-sm font-bold cursor-pointer">
-              Main treasury <ChevronDown className="size-3 opacity-50" />
+              My Disputes <ChevronDown className="size-3 opacity-50" />
             </div>
-            <div className={`text-[11px] font-mono ${textMuted}`}>0x13d9...4589</div>
+            <div className={`text-[11px] font-mono ${textMuted}`}>3 Active Cases</div>
           </div>
         </div>
         <div className="flex gap-3 pt-1">
-          <ScanLine className="size-5 opacity-60" />
+          <Filter className="size-5 opacity-60" />
           <Bell className="size-5 opacity-60" />
         </div>
       </div>
 
-      {/* Balance Hero */}
+      {/* Hero Stats */}
       <div className="px-6 py-6 text-center">
         <div className="text-4xl font-extrabold tracking-tight">
-          $1,854,380<span className="text-gray-400 text-2xl font-bold">.52</span>
+          $1,450<span className="text-gray-400 text-2xl font-bold">.00</span>
         </div>
+        <div className="text-xs font-bold text-[#BC5FEF] uppercase tracking-wide mt-1">Pending Rewards</div>
       </div>
 
       {/* Tabs */}
       <div className="flex px-6 border-b border-gray-100/10 mb-2">
-        {["Tokens", "Positions", "NFTs"].map((tab, i) => (
+        {["Active", "Past", "Appeals"].map((tab, i) => (
           <div key={tab} className={`pb-3 px-3 text-sm font-semibold border-b-[2px] cursor-pointer transition-colors ${i === 0 ? "border-current opacity-100" : "border-transparent opacity-40 hover:opacity-70"}`}>
             {tab}
           </div>
         ))}
       </div>
 
-      {/* Token List */}
+      {/* Dispute List */}
       <div className="flex-1 overflow-hidden px-4 space-y-2 pt-2">
         {[
-          { name: "USDC", amount: "1,144,064.33", val: "$1,144,064.33", change: "+0.21%", color: "bg-blue-500" },
-          { name: "Ethereum", amount: "132.527 ETH", val: "$619,809.02", change: "+2.51%", color: "bg-purple-500" },
-          { name: "Morpho", amount: "150,000 MORPHO", val: "$78,511.38", change: "+2.01%", color: "bg-indigo-500" },
-          { name: "Tether USD", amount: "8,634 USDT", val: "$8,639.64", change: "+0%", color: "bg-green-500" },
-          { name: "ENS", amount: "30 ENS", val: "$645.34", change: "-0.31%", color: "bg-blue-400", negative: true },
-        ].map((token) => (
-          <div key={token.name} className={`flex justify-between items-center p-3 rounded-2xl ${itemHover} transition-colors`}>
+          { name: "Stellar Community Fund", type: "Grant", status: "Voting Open", time: "2h left", color: "bg-blue-500", badgeColor: "bg-green-500/10 text-green-500" },
+          { name: "Ethereum Foundation", type: "Milestone", status: "Reveal Phase", time: "1d left", color: "bg-purple-500", badgeColor: "bg-[#BC5FEF]/10 text-[#BC5FEF]" },
+          { name: "Freelance Dispute #392", type: "Escrow", status: "Appeal", time: "12h left", color: "bg-orange-500", badgeColor: "bg-orange-500/10 text-orange-500" },
+          { name: "Prediction Market", type: "Oracle", status: "Pending", time: "3d left", color: "bg-gray-500", badgeColor: "bg-gray-500/10 text-gray-500" },
+        ].map((item, i) => (
+          <div key={i} className={`flex justify-between items-center p-3 rounded-2xl ${itemHover} transition-colors`}>
             <div className="flex items-center gap-3">
-              <div className={`size-10 rounded-full ${token.color} flex items-center justify-center text-white text-xs font-bold shadow-sm`}>
-                {token.name[0]}
+              <div className={`size-10 rounded-full ${item.color} flex items-center justify-center text-white text-xs font-bold shadow-sm`}>
+                {item.name[0]}
               </div>
               <div className="text-left">
-                <div className="text-sm font-bold">{token.name}</div>
-                <div className={`text-xs ${textMuted}`}>{token.amount}</div>
+                <div className="text-sm font-bold truncate max-w-[120px]">{item.name}</div>
+                <div className={`text-xs ${textMuted}`}>{item.type}</div>
               </div>
             </div>
             <div className="text-right">
-              <div className="text-sm font-bold tabular-nums">{token.val}</div>
-              <div className={`text-xs font-medium ${token.negative ? "text-red-500" : "text-[#00C46B]"}`}>{token.change}</div>
+              <div className={`text-[10px] font-bold px-2 py-1 rounded-full ${item.badgeColor}`}>{item.status}</div>
+              <div className={`text-[10px] font-medium mt-1 ${textMuted} flex items-center justify-end gap-1`}>
+                <Clock className="size-3" /> {item.time}
+              </div>
             </div>
           </div>
         ))}
@@ -129,10 +130,10 @@ export function MobileSection() {
         {/* Header Content */}
         <div className="mx-auto max-w-2xl mb-16">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[#0D1A12] mb-4">
-            Track and sign transactions on mobile
+            Justice is a Swipe Away
           </h2>
           <p className="text-lg text-gray-500 mb-8">
-            Get notifications and sign transactions on the move.
+            Review evidence, cast your vote, and level up your juror rank from anywhere.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">

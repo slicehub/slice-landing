@@ -24,12 +24,12 @@ export function Footer() {
           <div className="flex flex-col gap-4">
             <Link href="/" className="flex items-center gap-2">
               <div className="flex items-center gap-2 text-xl font-bold">
-                {/* Safe Logo Mark */}
+                {/* Slice Logo Mark */}
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4 4H10C13.3137 4 16 6.68629 16 10V14H10C6.68629 14 4 11.3137 4 8V4Z" fill="white" />
-                  <path d="M14 10H20V14C20 17.3137 17.3137 20 14 20H8V16H14C15.6569 16 17 14.6569 17 13C17 11.3431 15.6569 10 14 10Z" fill="#12FF80" />
+                  <path d="M12 2L2 19H22L12 2Z" fill="white" />
+                  <path d="M12 6L4.5 19H19.5L12 6Z" fill="#BC5FEF" />
                 </svg>
-                Safe
+                Slice
               </div>
             </Link>
           </div>
@@ -38,20 +38,19 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="text-sm font-medium text-gray-500">Product</h4>
             <ul className="space-y-3 text-sm text-gray-400">
-              <li><Link href="#" className="hover:text-white transition-colors">Multisig wallet</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Mobile wallet</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Safe Shield</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Developer APIs</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Appstore</Link></li>
+              <li><Link href="#" className="hover:text-white transition-colors">Juror Dashboard</Link></li>
+              <li><Link href="#" className="hover:text-white transition-colors">Staking</Link></li>
+              <li><Link href="#" className="hover:text-white transition-colors">Disputes</Link></li>
+              <li><Link href="#" className="hover:text-white transition-colors">Governance</Link></li>
             </ul>
           </div>
 
           <div className="space-y-4">
             <h4 className="text-sm font-medium text-gray-500">Solutions</h4>
             <ul className="space-y-3 text-sm text-gray-400">
-              <li><Link href="#" className="hover:text-white transition-colors">Teams</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Power Users</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Deploy new networks</Link></li>
+              <li><Link href="#" className="hover:text-white transition-colors">For Protocols</Link></li>
+              <li><Link href="#" className="hover:text-white transition-colors">For Marketplaces</Link></li>
+              <li><Link href="#" className="hover:text-white transition-colors">For DAOs</Link></li>
             </ul>
           </div>
 
@@ -95,7 +94,7 @@ export function Footer() {
             </Link>
           </div>
           <p className="text-sm text-gray-600">
-            © 2025 Safe.global. All rights reserved.
+            © 2025 Slice Protocol. All rights reserved.
           </p>
         </div>
       </div>
@@ -109,9 +108,9 @@ export function Footer() {
           className="w-full"
         >
           <defs>
-            <linearGradient id="safeGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#12FF80" stopOpacity="0.8" />
-              <stop offset="100%" stopColor="#12FF80" stopOpacity="0.05" />
+            <linearGradient id="sliceGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#BC5FEF" stopOpacity="0.8" />
+              <stop offset="100%" stopColor="#BC5FEF" stopOpacity="0.05" />
             </linearGradient>
           </defs>
           <text
@@ -122,12 +121,12 @@ export function Footer() {
             fontSize="480"
             fontWeight="700"
             letterSpacing="-0.04em"
-            stroke="url(#safeGradient)"
+            stroke="url(#sliceGradient)"
             strokeWidth="2"
             fill="none"
             fontFamily="sans-serif"
           >
-            Safe
+            Slice
           </text>
         </svg>
       </div>

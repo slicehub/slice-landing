@@ -8,9 +8,9 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Safe - Multisig Security for Your Onchain Assets",
+  title: "Slice - Get Paid for Doing Justice",
   description:
-    "The most trusted platform to manage digital assets on Ethereum and EVM chains. Enterprise-grade multisig wallet security.",
+    "Join the decentralized jury. Resolve disputes for crowdfunding, escrows, and protocols. Earn rewards in a gamified, on-chain court.",
   generator: "v0.app",
   icons: {
     icon: [
