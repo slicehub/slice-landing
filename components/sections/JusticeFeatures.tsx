@@ -32,7 +32,7 @@ const featureBlocks = [
   },
 ];
 
-export function SelfCustody() {
+export function JusticeFeatures() {
   return (
     <section
       id="justice-stack"

@@ -1,15 +1,14 @@
 import Navigation from "@/components/sections/Navigation";
-import { ControlCenter } from "@/components/sections/ControlCenter";
 import { DeployAnywhere } from "@/components/sections/DeployAnywhere";
 import { DevelopersSection } from "@/components/sections/DevelopersSection";
 import { AppsSection } from "@/components/sections/AppsSection";
-import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Footer } from "@/components/sections/Footer";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { MoveFaster } from "@/components/sections/MoveFaster";
+import { JusticeForEveryone } from "@/components/sections/JusticeForEveryone";
 import { SecurityGuarantees } from "@/components/sections/SecurityGuarantees";
-import { SelfCustody } from "@/components/sections/SelfCustody";
 import { MobileSection } from "@/components/sections/MobileSection";
+import { JusticeFeatures } from "@/components/sections/JusticeFeatures";
+import { TechnicalFeatures } from "@/components/sections/TechnicalFeatures";
 
 export default function Home() {
   return (
@@ -17,11 +16,11 @@ export default function Home() {
       <Navigation />
       <main className="overflow-hidden">
         <HeroSection />
-        <SelfCustody />
-        <ControlCenter />
+        <JusticeFeatures />
+        <TechnicalFeatures />
         <DeployAnywhere />
         <SecurityGuarantees />
-        <MoveFaster />
+        <JusticeForEveryone />
         <AppsSection />
         <DevelopersSection />
         <MobileSection />

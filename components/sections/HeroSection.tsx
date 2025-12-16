@@ -1,11 +1,11 @@
 import { Button } from "@/components/ui/button";
+import { SLICE_LINKS } from "@/lib/constants";
 import {
   ArrowRight,
   Gavel,
   Award,
   TrendingUp,
   Clock,
-  ChevronRight,
   LayoutDashboard,
   Wallet,
   Settings,
@@ -18,6 +18,83 @@ import {
   CheckCircle2,
   MoreHorizontal,
 } from "lucide-react";
+import Link from "next/link";
+
+// --- Main Hero Section Export ---
+export function HeroSection() {
+  return (
+    <section className="relative bg-[#FAFAFA] pt-32 pb-32 overflow-hidden">
+      <GridBackground />
+
+      <div className="container relative z-10 mx-auto px-6 max-w-7xl">
+        {/* 1. Hero Copy */}
+        <div className="text-center max-w-4xl mx-auto mb-20">
+          <h4 className="text-xs font-bold tracking-[0.2em] text-gray-500 uppercase mb-6">
+            The Standard for Decentralized Justice
+          </h4>
+          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-[#0D1A12] mb-6 leading-[1.1]">
+            Get paid to <br />
+            <span className="relative inline-block">
+              {/* Highlight box behind text */}
+              <span className="absolute inset-0 bg-[#BC5FEF] -rotate-1 skew-x-3 opacity-20 blur-sm rounded-lg -z-10" />
+              deliver justice
+            </span>
+          </h1>
+          <p className="text-xl text-gray-500 max-w-3xl mx-auto mb-10">
+            Join the jury. Review disputes from crowdfunding to escrows. Earn
+            rewards in a gamified, on-chain court.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href={SLICE_LINKS.APP}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="h-14 px-12 rounded-full bg-[#1A1025] text-white text-lg font-bold hover:bg-[#2a1a3a] shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1">
+                Start Judging <ArrowRight className="ml-2 size-5" />
+              </Button>
+            </Link>
+            <Link
+              href={SLICE_LINKS.DOCS}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                variant="outline"
+                className="h-14 px-8 rounded-full border-gray-200 text-gray-600 text-lg font-bold hover:bg-white hover:text-[#0D1A12] hover:border-gray-300 bg-white/50 backdrop-blur-sm"
+              >
+                How it Works
+              </Button>
+            </Link>
+          </div>
+        </div>
+
+        {/* 2. Overlapping UI Composition (RESPONSIVE FIX) */}
+        <div className="relative h-[500px] sm:h-[600px] md:h-[650px] w-full flex justify-center mt-12 perspective-[2000px]">
+          {/* Desktop Dashboard (Back Layer) */}
+          <div
+            className="absolute top-4 sm:top-8 left-1/2 -translate-x-1/2
+                          scale-[0.6] sm:scale-[0.7] md:scale-[0.8] lg:scale-100
+                          transition-transform duration-700 hover:scale-[0.62] sm:hover:scale-[0.72] md:hover:scale-[0.82] lg:hover:scale-[1.02] hover:-translate-y-2 origin-top shadow-2xl"
+          >
+            <HeroDashboard />
+          </div>
+
+          {/* Mobile Phone (Front Layer - Offset Left) */}
+          <div
+            className="absolute top-16 sm:top-24 left-1/2 -translate-x-1/2 md:left-[8%] md:translate-x-0
+                          scale-[0.9] sm:scale-[0.92] md:scale-[0.95] lg:scale-100
+                          origin-top md:origin-top-left transition-transform duration-700
+                          hover:-translate-y-4 hover:rotate-[-2deg] z-30
+                          ml-[-10px] md:ml-0"
+          >
+            <HeroPhone />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 // --- 1. Background Grid Component ---
 function GridBackground() {
@@ -39,13 +116,12 @@ function GridBackground() {
   );
 }
 
+// --- 2. The Refined "Evidence App" UI (Phone) ---
 function HeroPhone() {
   return (
     <div className="relative w-[300px] h-[600px] rounded-[48px] bg-white border-[8px] border-[#1a1a1a] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.25)] overflow-hidden z-20 font-sans">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 h-7 w-28 bg-[#1a1a1a] rounded-b-[18px] z-20" />
-
-      {/* Reduced padding top from pt-12 to pt-8 to move content higher */}
-      <div className="flex flex-col h-full bg-[#F2F2F4] pt-6 relative overflow-hidden">
+      <div className="flex flex-col h-full bg-[#F2F2F4] pt-12 relative overflow-hidden">
         <div className="px-6 pb-4 pt-2">
           <button className="size-10 bg-white rounded-full flex items-center justify-center shadow-sm border border-gray-100 text-[#0D1A12] hover:bg-gray-50 transition-colors">
             <ChevronLeft className="size-5" />
@@ -134,21 +210,28 @@ function HeroPhone() {
   );
 }
 
-// --- 3. The UPDATED Professional Juror Dashboard ---
+// --- 3. The Professional Juror Dashboard UI ---
 function HeroDashboard() {
   return (
-    <div className="w-[1100px] p-2 h-[680px] bg-white rounded-[32px] border border-gray-200 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.12)] overflow-hidden flex font-sans">
+    <div className="w-[1100px] h-[680px] bg-white rounded-[32px] border border-gray-200 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.12)] overflow-hidden flex font-sans">
       {/* Sidebar */}
       <div className="w-[260px] bg-white border-r border-gray-100 flex flex-col p-6">
         <div className="flex items-center gap-3 mb-12 pl-2">
-          <div className="size-9 bg-[#BC5FEF] rounded-xl flex items-center justify-center text-white shadow-lg shadow-purple-200">
-            <Gavel className="size-5" />
+          {/* Logo Container */}
+          <div className="size-9 bg-black rounded-xl flex items-center justify-center shadow-lg shadow-purple-200">
+            {/* Replaced Icon with SVG Image */}
+            {/* 'brightness-0 invert' makes the black SVG white to match the design */}
+            <img
+              src="/icons/slice-logo-transparent.svg"
+              alt="Slice"
+              className="size-5 object-contain brightness-0 invert"
+            />
           </div>
+
           <span className="font-bold text-xl text-[#0D1A12] tracking-tight">
             Slice
           </span>
         </div>
-
         <div className="space-y-1.5 flex-1">
           {[
             { name: "Overview", icon: LayoutDashboard, active: true },
@@ -201,9 +284,8 @@ function HeroDashboard() {
         </div>
       </div>
 
-      {/* Main Content - Light Gray Background for Contrast */}
+      {/* Main Content */}
       <div className="flex-1 bg-[#FAFAFA] p-10 flex flex-col overflow-y-auto">
-        {/* Header */}
         <div className="flex justify-between items-end mb-10">
           <div>
             <h2 className="text-3xl font-extrabold text-[#0D1A12] tracking-tight mb-2">
@@ -218,9 +300,8 @@ function HeroDashboard() {
           </Button>
         </div>
 
-        {/* Stats Row */}
         <div className="grid grid-cols-3 gap-6 mb-10">
-          {/* Card 1: Level */}
+          {/* Card 1 */}
           <div className="bg-white p-6 rounded-[24px] border border-gray-100 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
             <div className="flex justify-between items-start mb-6">
               <div className="size-12 rounded-2xl bg-purple-50 flex items-center justify-center text-[#BC5FEF]">
@@ -239,8 +320,7 @@ function HeroDashboard() {
               </div>
             </div>
           </div>
-
-          {/* Card 2: Earnings */}
+          {/* Card 2 */}
           <div className="bg-white p-6 rounded-[24px] border border-gray-100 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
             <div className="flex justify-between items-start mb-6">
               <div className="size-12 rounded-2xl bg-green-50 flex items-center justify-center text-green-600">
@@ -259,8 +339,7 @@ function HeroDashboard() {
               </div>
             </div>
           </div>
-
-          {/* Card 3: Accuracy */}
+          {/* Card 3 */}
           <div className="bg-white p-6 rounded-[24px] border border-gray-100 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
             <div className="flex justify-between items-start mb-6">
               <div className="size-12 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600">
@@ -278,7 +357,7 @@ function HeroDashboard() {
           </div>
         </div>
 
-        {/* Recent Rulings Table */}
+        {/* Table */}
         <div className="bg-white rounded-[28px] border border-gray-100 shadow-sm flex-1 p-2">
           <div className="flex items-center justify-between px-6 py-5 border-b border-gray-50">
             <h3 className="font-bold text-gray-900 text-lg">Recent Rulings</h3>
@@ -286,7 +365,6 @@ function HeroDashboard() {
               View All
             </button>
           </div>
-
           <div className="p-2 space-y-1">
             {[
               {
@@ -362,59 +440,5 @@ function HeroDashboard() {
         </div>
       </div>
     </div>
-  );
-}
-
-// --- Main Hero Section Export ---
-export function HeroSection() {
-  return (
-    <section className="relative bg-[#FAFAFA] pt-32 pb-32 overflow-hidden">
-      <GridBackground />
-
-      <div className="container relative z-10 mx-auto px-6 max-w-7xl">
-        {/* 1. Hero Copy */}
-        <div className="text-center max-w-4xl mx-auto mb-20">
-          <h4 className="text-xs font-bold tracking-[0.2em] text-gray-500 uppercase mb-6">
-            The Standard for Decentralized Justice
-          </h4>
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-[#0D1A12] mb-6 leading-[1.1]">
-            Get paid to <br />
-            <span className="relative inline-block">
-              {/* Highlight box behind text */}
-              <span className="absolute inset-0 bg-[#BC5FEF] -rotate-1 skew-x-3 opacity-20 blur-sm rounded-lg -z-10" />
-              deliver justice
-            </span>
-          </h1>
-          <p className="text-xl text-gray-500 max-w-3xl mx-auto mb-10">
-            Join the jury. Review disputes from crowdfunding to escrows. Earn
-            rewards in a gamified, on-chain court.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <Button className="h-14 px-12 rounded-full bg-[#1A1025] text-white text-lg font-bold hover:bg-[#2a1a3a] shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1">
-              Start Judging <ArrowRight className="ml-2 size-5" />
-            </Button>
-            <Button
-              variant="outline"
-              className="h-14 px-8 rounded-full border-gray-200 text-gray-600 text-lg font-bold hover:bg-white hover:text-[#0D1A12] hover:border-gray-300 bg-white/50 backdrop-blur-sm"
-            >
-              How it Works
-            </Button>
-          </div>
-        </div>
-
-        {/* 2. Overlapping UI Composition */}
-        <div className="relative h-[650px] w-full flex justify-center mt-12 perspective-[2000px]">
-          {/* Desktop Dashboard (Back Layer) */}
-          <div className="absolute top-8 left-1/2 -translate-x-1/2 scale-90 md:scale-100 transition-transform duration-700 hover:scale-[1.01] hover:-translate-y-2 origin-top shadow-2xl">
-            <HeroDashboard />
-          </div>
-
-          {/* Mobile Phone (Front Layer - Offset Left) */}
-          <div className="absolute top-24 left-[2%] md:left-[8%] transition-transform duration-700 hover:-translate-y-4 hover:rotate-[-2deg] z-30">
-            <HeroPhone />
-          </div>
-        </div>
-      </div>
-    </section>
   );
 }
