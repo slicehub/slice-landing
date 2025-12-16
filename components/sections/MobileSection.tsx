@@ -150,7 +150,7 @@ export function MobileSection() {
         {/* 3. The 3-Phone Composition */}
         <div className="relative mx-auto mt-12 h-[500px] w-full max-w-5xl perspective-[2000px]">
           {/* Gradient Mask to fade phones at bottom */}
-          <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#FAFAFA] to-transparent z-40" />
+
 
           <div className="relative h-full w-full flex justify-center items-start pt-10">
 

@@ -1,5 +1,5 @@
 import Navigation from "@/components/sections/Navigation";
-import { Controls } from "@/components/sections/Controls";
+import { ControlCenter } from "@/components/sections/ControlCenter";
 import { DeployAnywhere } from "@/components/sections/DeployAnywhere";
 import { DevelopersSection } from "@/components/sections/DevelopersSection";
 import { FinalCTA } from "@/components/sections/FinalCTA";
@@ -21,7 +21,7 @@ export default function Home() {
       <main className="overflow-hidden">
         <HeroSection />
         <SelfCustody />
-        <Controls />
+        <ControlCenter />
         <DeployAnywhere />
         <ReplaceWallets />
         <MoveFaster />
