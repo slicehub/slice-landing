@@ -1,5 +1,5 @@
 import Navigation from "@/components/sections/Navigation";
-import { DeployAnywhere } from "@/components/sections/DeployAnywhere";
+import { ChainAbstraction } from "@/components/sections/ChainAbstraction";
 import { DevelopersSection } from "@/components/sections/DevelopersSection";
 import { AppsSection } from "@/components/sections/AppsSection";
 import { Footer } from "@/components/sections/Footer";
@@ -18,7 +18,7 @@ export default function Home() {
         <HeroSection />
         <JusticeFeatures />
         <TechnicalFeatures />
-        <DeployAnywhere />
+        <ChainAbstraction />
         <SecurityGuarantees />
         <JusticeForEveryone />
         <AppsSection />
