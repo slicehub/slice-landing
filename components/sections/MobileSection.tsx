@@ -3,16 +3,16 @@ import { Button } from "@/components/ui/button";
 import { Apple, Play, Battery, Signal, Wifi, ChevronDown, Bell, ScanLine } from "lucide-react";
 
 // 1. The Internal App UI (Reused for all phones)
+// 1. The Internal App UI (Reused for all phones)
 function PhoneContent({ isDark = false }: { isDark?: boolean }) {
   const bgClass = isDark ? "bg-[#0C110F] text-white" : "bg-white text-black";
   const textMuted = isDark ? "text-gray-500" : "text-gray-400";
   const itemHover = isDark ? "bg-white/5" : "bg-gray-50";
-  const greenText = "text-[#12FF80]";
 
   return (
-    <div className={`h - full w - full flex flex - col font - sans ${bgClass} `}>
-      {/* Status Bar */}
-      <div className="flex justify-between items-center px-6 pt-3 pb-2 text-[10px] font-medium">
+    <div className={`h-full w-full flex flex-col font-sans ${bgClass} select-none`}>
+      {/* Status Bar - Pushed down to clear corners */}
+      <div className="flex justify-between items-center px-7 pt-5 text-[10px] font-medium tracking-wide opacity-80">
         <span>9:41</span>
         <div className="flex gap-1.5">
           <Signal className="h-3 w-3" />
@@ -21,43 +21,43 @@ function PhoneContent({ isDark = false }: { isDark?: boolean }) {
         </div>
       </div>
 
-      {/* App Header */}
-      <div className="px-6 py-2 flex justify-between items-start">
-        <div className="flex items-center gap-2">
-          <div className={`size - 8 rounded - full flex items - center justify - center text - xs font - bold ${isDark ? "bg-gray-800 text-white" : "bg-gray-100 text-black"} `}>
+      {/* App Header - Pushed down to clear Dynamic Island */}
+      <div className="px-6 pb-2 pt-8 flex justify-between items-start">
+        <div className="flex items-center gap-3">
+          <div className={`size-10 rounded-full flex items-center justify-center text-base shadow-sm ${isDark ? "bg-gray-800 text-white" : "bg-gray-100 text-black border border-gray-200"}`}>
             💰
           </div>
-          <div>
-            <div className="flex items-center gap-1 text-sm font-semibold cursor-pointer">
+          <div className="text-left">
+            <div className="flex items-center gap-1 text-sm font-bold cursor-pointer">
               Main treasury <ChevronDown className="size-3 opacity-50" />
             </div>
-            <div className={`text - [10px] ${textMuted} `}>0x13d9...4589</div>
+            <div className={`text-[11px] font-mono ${textMuted}`}>0x13d9...4589</div>
           </div>
         </div>
-        <div className="flex gap-3">
-          <ScanLine className="size-5 opacity-70" />
-          <Bell className="size-5 opacity-70" />
+        <div className="flex gap-3 pt-1">
+          <ScanLine className="size-5 opacity-60" />
+          <Bell className="size-5 opacity-60" />
         </div>
       </div>
 
       {/* Balance Hero */}
       <div className="px-6 py-6 text-center">
-        <div className="text-4xl font-bold tracking-tight">
-          $1,854,380<span className="text-gray-400 text-2xl">.52</span>
+        <div className="text-4xl font-extrabold tracking-tight">
+          $1,854,380<span className="text-gray-400 text-2xl font-bold">.52</span>
         </div>
       </div>
 
       {/* Tabs */}
-      <div className="flex px-6 border-b border-gray-100/10 mb-4">
+      <div className="flex px-6 border-b border-gray-100/10 mb-2">
         {["Tokens", "Positions", "NFTs"].map((tab, i) => (
-          <div key={tab} className={`pb - 3 px - 2 text - sm font - medium border - b - 2 cursor - pointer transition - colors ${i === 0 ? "border-black dark:border-white opacity-100" : "border-transparent opacity-40 hover:opacity-70"} `}>
+          <div key={tab} className={`pb-3 px-3 text-sm font-semibold border-b-[2px] cursor-pointer transition-colors ${i === 0 ? "border-current opacity-100" : "border-transparent opacity-40 hover:opacity-70"}`}>
             {tab}
           </div>
         ))}
       </div>
 
       {/* Token List */}
-      <div className="flex-1 overflow-hidden px-4 space-y-1">
+      <div className="flex-1 overflow-hidden px-4 space-y-2 pt-2">
         {[
           { name: "USDC", amount: "1,144,064.33", val: "$1,144,064.33", change: "+0.21%", color: "bg-blue-500" },
           { name: "Ethereum", amount: "132.527 ETH", val: "$619,809.02", change: "+2.51%", color: "bg-purple-500" },
@@ -65,19 +65,19 @@ function PhoneContent({ isDark = false }: { isDark?: boolean }) {
           { name: "Tether USD", amount: "8,634 USDT", val: "$8,639.64", change: "+0%", color: "bg-green-500" },
           { name: "ENS", amount: "30 ENS", val: "$645.34", change: "-0.31%", color: "bg-blue-400", negative: true },
         ].map((token) => (
-          <div key={token.name} className={`flex justify - between items - center p - 3 rounded - xl ${itemHover} `}>
+          <div key={token.name} className={`flex justify-between items-center p-3 rounded-2xl ${itemHover} transition-colors`}>
             <div className="flex items-center gap-3">
-              <div className={`size - 9 rounded - full ${token.color} flex items - center justify - center text - white text - [10px]`}>
+              <div className={`size-10 rounded-full ${token.color} flex items-center justify-center text-white text-xs font-bold shadow-sm`}>
                 {token.name[0]}
               </div>
               <div className="text-left">
-                <div className="text-sm font-semibold">{token.name}</div>
-                <div className={`text - xs ${textMuted} `}>{token.amount}</div>
+                <div className="text-sm font-bold">{token.name}</div>
+                <div className={`text-xs ${textMuted}`}>{token.amount}</div>
               </div>
             </div>
             <div className="text-right">
-              <div className="text-sm font-medium">{token.val}</div>
-              <div className={`text - xs ${token.negative ? "text-red-400" : "text-[#00C46B]"} `}>{token.change}</div>
+              <div className="text-sm font-bold tabular-nums">{token.val}</div>
+              <div className={`text-xs font-medium ${token.negative ? "text-red-500" : "text-[#00C46B]"}`}>{token.change}</div>
             </div>
           </div>
         ))}
@@ -86,7 +86,7 @@ function PhoneContent({ isDark = false }: { isDark?: boolean }) {
   );
 }
 
-// 2. The Hardware Shell (iPhone 14/15 Pro style)
+// 2. The Hardware Shell (High-Fidelity iPhone Mockup)
 function PhoneFrame({
   children,
   className,
@@ -98,19 +98,25 @@ function PhoneFrame({
 }) {
   return (
     <div
-      className={`relative rounded - [50px] bg - black p - [8px] shadow - 2xl border - [6px] border - [#1a1a1a] ring - 1 ring - gray - 800 ${className} `}
+      className={`relative rounded-[55px] bg-[#121212] p-[12px] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] ring-1 ring-white/10 ${className}`}
       style={style}
     >
-      {/* Dynamic Island */}
-      <div className="absolute top-[18px] left-1/2 -translate-x-1/2 h-[24px] w-[90px] bg-black rounded-full z-20 pointer-events-none" />
+      {/* Outer Bezel Border (Simulates polished metal edge) */}
+      <div className="absolute inset-0 rounded-[55px] border-[1px] border-white/10 pointer-events-none z-50"></div>
 
-      {/* Screen Container */}
-      <div className="relative h-full w-full rounded-[42px] overflow-hidden bg-white">
+      {/* Dynamic Island */}
+      <div className="absolute top-[22px] left-1/2 -translate-x-1/2 h-[35px] w-[120px] bg-black rounded-full z-20 flex items-center justify-center pointer-events-none">
+        {/* Camera lens reflection */}
+        <div className="absolute right-[25%] size-3 rounded-full bg-[#1a1a1a] shadow-inner" />
+      </div>
+
+      {/* Screen Container with Inner Shadow */}
+      <div className="relative h-full w-full rounded-[44px] overflow-hidden bg-white shadow-[inset_0_0_0_2px_rgba(0,0,0,0.1)]">
         {children}
       </div>
 
-      {/* Glass Reflection/Glare Overlay */}
-      <div className="absolute inset-0 rounded-[50px] pointer-events-none bg-gradient-to-tr from-white/10 to-transparent opacity-20 z-30" />
+      {/* Glossy Reflection Overlay */}
+      <div className="absolute inset-0 rounded-[55px] pointer-events-none bg-gradient-to-tr from-white/20 via-transparent to-transparent opacity-10 z-40" style={{ mixBlendMode: 'overlay' }} />
     </div>
   );
 }
