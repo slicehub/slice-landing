@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 export function FinalCTA() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-[#040605] via-[#050807] to-[#040605] py-20 text-white">
-      <div className="absolute inset-x-0 bottom-0 h-52 bg-[radial-gradient(circle_at_50%_0%,rgba(0,255,154,0.32),transparent_60%)]" />
+
       <div className="container relative mx-auto max-w-5xl px-6 text-center">
         <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.25em] text-[#8bf6c8]">
           Ready to move faster
