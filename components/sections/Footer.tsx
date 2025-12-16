@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-black text-white">
-      <div className="absolute inset-x-0 top-[-20%] h-[420px] bg-[radial-gradient(circle_at_50%_20%,rgba(0,230,115,0.16),transparent_55%)]" />
+    <footer className="relative overflow-hidden bg-gradient-to-b from-[#030504] via-[#040605] to-[#050807] text-white">
+      <div className="absolute inset-x-0 top-[-30%] h-[420px] bg-[radial-gradient(circle_at_50%_20%,rgba(0,255,154,0.16),transparent_55%)]" />
       <div className="container relative mx-auto max-w-6xl px-6 pb-16 pt-20">
         <div className="grid gap-12 md:grid-cols-4">
           <div className="md:col-span-2">
@@ -59,7 +59,7 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div className="relative h-24 w-full border-t border-white/5 bg-[#050706]/60">
+      <div className="relative h-24 w-full border-t border-white/5 bg-[#040605]/80">
         <div className="absolute inset-0 flex items-center justify-center text-[120px] font-semibold uppercase tracking-tight text-white/5">
           Safe
         </div>

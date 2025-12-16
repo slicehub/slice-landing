@@ -21,17 +21,24 @@ const teamUse = [
 
 export function TeamsSection() {
   return (
-    <section className="bg-white py-24">
-      <div className="container mx-auto max-w-6xl px-6">
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#f7faf9] via-white to-[#eef3f0] py-24">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-x-0 top-[-35%] h-[300px] bg-[radial-gradient(circle_at_50%_70%,rgba(0,255,154,0.14),transparent_60%)]" />
+        <div className="absolute left-[-10%] bottom-[-15%] h-56 w-56 rounded-full bg-[radial-gradient(circle_at_40%_50%,rgba(0,196,110,0.18),transparent_60%)] blur-3xl" />
+      </div>
+      <div className="container relative mx-auto max-w-6xl px-6">
         <div className="text-center">
           <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#5c6c61]">Teams</span>
           <h2 className="mt-3 text-4xl font-semibold text-[#0d1a12]">Built to help your teams move faster</h2>
         </div>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {teamUse.map((team) => (
-            <Card key={team.title} className="h-full border-[#e6e9ef] bg-white p-6 shadow-[0_10px_40px_rgba(0,0,0,0.04)]">
+            <Card
+              key={team.title}
+              className="h-full border-[#dce4dd] bg-white/90 p-6 shadow-[0_14px_50px_rgba(7,20,12,0.08)] backdrop-blur-sm"
+            >
               <div className="flex items-center gap-3">
-                <div className="size-10 rounded-full bg-[#e9fdf1]" />
+                <div className="size-10 rounded-full bg-gradient-to-br from-[#dcfff0] to-white" />
                 <h3 className="text-lg font-semibold text-[#0d1a12]">{team.title}</h3>
               </div>
               <p className="mt-3 text-sm text-[#4b5c50]">{team.description}</p>

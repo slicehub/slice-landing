@@ -4,10 +4,14 @@ import { ArrowRight } from "lucide-react";
 
 export default function Navigation() {
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-[#e6e9ef] bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+    <nav className="sticky top-0 z-50 w-full border-b border-white/50 bg-white/70 shadow-[0_12px_50px_rgba(7,20,12,0.08)] backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <div className="container mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <div className="flex items-center gap-10">
-          <Link href="/" className="text-xl font-semibold text-[#0d1a12]">
+          <Link
+            href="/"
+            className="flex items-center gap-2 rounded-full border border-[#dbe5df] bg-white/80 px-3 py-1.5 text-lg font-semibold text-[#0d1a12] shadow-sm"
+          >
+            <span className="size-2 rounded-full bg-gradient-to-br from-[#00ff9a] to-[#08c46e]" />
             Safe
           </Link>
           <div className="hidden items-center gap-6 text-sm font-medium text-[#4b5c50] md:flex">
@@ -32,7 +36,7 @@ export default function Navigation() {
           <Link href="#start" className="hidden text-sm font-semibold text-[#0d1a12] hover:text-[#00b85a] sm:inline">
             Docs
           </Link>
-          <Button className="h-10 rounded-full bg-[#00e673] px-5 text-sm font-semibold text-black hover:bg-[#00cf68]">
+          <Button className="h-10 rounded-full bg-gradient-to-r from-[#00ff9a] via-[#10f0ae] to-[#08c46e] px-5 text-sm font-semibold text-black shadow-[0_10px_35px_rgba(0,255,154,0.25)]">
             Launch Safe <ArrowRight className="h-4 w-4" />
           </Button>
         </div>
