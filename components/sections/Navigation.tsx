@@ -37,7 +37,7 @@ export default function Navigation() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="hover:text-[#BC5FEF] transition-colors"
+                className="hover:text-primary transition-colors"
                 onClick={(e) => {
                   e.preventDefault();
                   document.querySelector(item.href)?.scrollIntoView({ behavior: 'smooth' });
@@ -55,12 +55,12 @@ export default function Navigation() {
             href={SLICE_LINKS.DOCS}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden px-4 py-2 text-sm font-semibold text-[#0D1A12] hover:text-[#BC5FEF] transition-colors sm:inline"
+            className="hidden px-4 py-2 text-sm font-semibold text-[#0D1A12] hover:text-primary transition-colors sm:inline"
           >
             Docs
           </Link>
           <Link href={SLICE_LINKS.APP} target="_blank" rel="noopener noreferrer">
-            <Button className="h-10 rounded-full bg-black hover:bg-[#BC5FEF] text-white px-5 text-sm font-bold shadow-lg transition-all hover:scale-105 hidden sm:flex border border-white/10">
+            <Button className="h-10 rounded-full bg-black hover:bg-primary text-white px-5 text-sm font-bold shadow-lg transition-all hover:scale-105 hidden sm:flex border border-white/10">
               Launch App <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>
@@ -104,7 +104,7 @@ export default function Navigation() {
               Documentation
             </Link>
             <Link href={SLICE_LINKS.APP} target="_blank" rel="noopener noreferrer" className="w-full">
-              <Button className="w-full mt-2 h-12 rounded-xl bg-black hover:bg-[#BC5FEF] text-white text-base font-bold shadow-lg">
+              <Button className="w-full mt-2 h-12 rounded-xl bg-black hover:bg-primary text-white text-base font-bold shadow-lg">
                 Launch App <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>

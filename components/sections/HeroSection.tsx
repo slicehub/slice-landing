@@ -36,7 +36,7 @@ export function HeroSection() {
             Get paid to <br />
             <span className="relative inline-block">
               {/* Highlight box behind text */}
-              <span className="absolute inset-0 bg-[#BC5FEF] -rotate-1 skew-x-3 opacity-20 blur-sm rounded-lg -z-10" />
+              <span className="absolute inset-0 bg-primary -rotate-1 skew-x-3 opacity-40 blur-sm rounded-lg -z-10" />
               deliver justice
             </span>
           </h1>
@@ -110,7 +110,7 @@ function GridBackground() {
           backgroundSize: "80px 80px",
         }}
       />
-      <div className="absolute top-[10%] left-[20%] w-[400px] h-[400px] bg-[#BC5FEF] opacity-[0.08] blur-[100px] rounded-full" />
+      <div className="absolute top-[10%] left-[20%] w-[400px] h-[400px] bg-primary opacity-[0.08] blur-[100px] rounded-full" />
       <div className="absolute bottom-[20%] right-[10%] w-[300px] h-[300px] bg-blue-400 opacity-[0.05] blur-[80px] rounded-full" />
     </div>
   );
@@ -133,7 +133,7 @@ function HeroPhone() {
               <Clock className="size-5" />
               <span className="text-sm">Time left to vote:</span>
             </div>
-            <span className="font-mono font-bold text-[#BC5FEF] text-lg">
+            <span className="font-mono font-bold text-primary text-lg">
               2:45h
             </span>
           </div>
@@ -151,7 +151,7 @@ function HeroPhone() {
                   Project Alpha
                 </h3>
                 <div className="mt-1">
-                  <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-[#F3E8FF] text-[#BC5FEF] text-[10px] font-bold uppercase tracking-wide">
+                  <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wide">
                     <User className="size-3 mr-1" /> Plaintiff
                   </span>
                 </div>
@@ -170,7 +170,7 @@ function HeroPhone() {
             <div>
               <div className="flex items-center justify-between mb-3">
                 <h4 className="text-base font-bold text-[#0D1A12]">Evidence</h4>
-                <span className="bg-[#F3E8FF] text-[#BC5FEF] text-[10px] font-bold px-2 py-1 rounded-full flex items-center gap-1.5">
+                <span className="bg-primary/10 text-primary text-[10px] font-bold px-2 py-1 rounded-full flex items-center gap-1.5">
                   <ImageIcon className="size-3" /> Images
                 </span>
               </div>
@@ -304,7 +304,7 @@ function HeroDashboard() {
           {/* Card 1 */}
           <div className="bg-white p-6 rounded-[24px] border border-gray-100 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
             <div className="flex justify-between items-start mb-6">
-              <div className="size-12 rounded-2xl bg-purple-50 flex items-center justify-center text-[#BC5FEF]">
+              <div className="size-12 rounded-2xl bg-purple-50 flex items-center justify-center text-primary">
                 <Award className="size-6" />
               </div>
               <span className="bg-gray-100 text-gray-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
@@ -361,7 +361,7 @@ function HeroDashboard() {
         <div className="bg-white rounded-[28px] border border-gray-100 shadow-sm flex-1 p-2">
           <div className="flex items-center justify-between px-6 py-5 border-b border-gray-50">
             <h3 className="font-bold text-gray-900 text-lg">Recent Rulings</h3>
-            <button className="text-sm font-semibold text-[#BC5FEF] hover:bg-purple-50 px-3 py-1.5 rounded-lg transition-colors">
+            <button className="text-sm font-semibold text-primary hover:bg-purple-50 px-3 py-1.5 rounded-lg transition-colors">
               View All
             </button>
           </div>
@@ -397,7 +397,7 @@ function HeroDashboard() {
                 className="flex items-center justify-between p-4 hover:bg-[#FAFAFA] rounded-2xl transition-colors cursor-pointer group"
               >
                 <div className="flex items-center gap-4">
-                  <div className="size-10 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-400 font-bold group-hover:bg-white group-hover:border-[#BC5FEF] group-hover:text-[#BC5FEF] transition-all">
+                  <div className="size-10 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-400 font-bold group-hover:bg-white group-hover:border-primary group-hover:text-primary transition-all">
                     {item.type === "Market" && (
                       <TrendingUp className="size-5" />
                     )}

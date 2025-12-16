@@ -116,7 +116,7 @@ function CodeWindow() {
       </div>
 
       {/* Decorative Glow */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-[#BC5FEF]/5 rounded-bl-[100px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-bl-[100px] pointer-events-none" />
     </div>
   );
 }
@@ -142,7 +142,7 @@ export function DevelopersSection() {
             <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-[1.1]">
               Built for <br />
               any <br />
-              <span className="text-[#BC5FEF] drop-shadow-sm selection:bg-[#BC5FEF] selection:text-white">Protocol</span>
+              <span className="text-primary drop-shadow-sm selection:bg-primary selection:text-white">Protocol</span>
             </h2>
 
             <p className="text-xl text-gray-500 mb-10 max-w-lg leading-relaxed">
@@ -156,7 +156,7 @@ export function DevelopersSection() {
                 { icon: FileCode2, text: "Plug-and-Play Justice" }
               ].map((feature, i) => (
                 <div key={i} className="flex items-center gap-4 group">
-                  <div className="size-10 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center group-hover:bg-[#BC5FEF] group-hover:border-[#BC5FEF] transition-colors duration-300">
+                  <div className="size-10 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors duration-300">
                     <feature.icon className="size-5 text-gray-600 group-hover:text-white transition-colors duration-300" />
                   </div>
                   <span className="text-lg font-semibold text-gray-700">{feature.text}</span>
@@ -180,7 +180,7 @@ export function DevelopersSection() {
 
           {/* Right: Code Visual */}
           <div className="relative">
-            <div className="absolute -inset-4 bg-gradient-to-r from-[#BC5FEF] to-blue-500 rounded-2xl opacity-20 blur-2xl -z-10" />
+            <div className="absolute -inset-4 bg-gradient-to-r from-primary to-blue-500 rounded-2xl opacity-20 blur-2xl -z-10" />
             <CodeWindow />
 
             {/* Floating Badge */}

@@ -17,7 +17,7 @@ export function DeployAnywhere() {
 
       <div className="container relative mx-auto max-w-6xl px-6">
         <div className="text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-purple-100 bg-purple-50 px-4 py-2 text-xs uppercase tracking-[0.25em] text-[#BC5FEF] font-bold">
+          <div className="inline-flex items-center gap-2 rounded-full border border-purple-100 bg-purple-50 px-4 py-2 text-xs uppercase tracking-[0.25em] text-primary font-bold">
             Chain Abstraction
           </div>
           <h2 className="mt-8 text-4xl md:text-5xl font-extrabold tracking-tight">One Interface. Any Chain.</h2>
@@ -74,12 +74,12 @@ function UXFeature({
   icon: any;
 }) {
   return (
-    <div className="group relative rounded-[32px] border border-gray-200 bg-white p-8 shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl hover:border-[#BC5FEF]/30 overflow-hidden">
+    <div className="group relative rounded-[32px] border border-gray-200 bg-white p-8 shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl hover:border-primary/30 overflow-hidden">
       {/* Hover Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#BC5FEF]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
       <div className="relative z-10 flex flex-col items-center text-center">
-        <div className="flex size-16 items-center justify-center rounded-2xl bg-[#FAFAFA] border border-gray-100 shadow-sm text-[#BC5FEF] mb-6 group-hover:scale-110 transition-transform">
+        <div className="flex size-16 items-center justify-center rounded-2xl bg-[#FAFAFA] border border-gray-100 shadow-sm text-primary mb-6 group-hover:scale-110 transition-transform">
           <Icon className="h-8 w-8" />
         </div>
         <h3 className="text-xl font-bold text-[#0D1A12] mb-3">{title}</h3>

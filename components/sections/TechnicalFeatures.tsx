@@ -26,11 +26,11 @@ function BentoCard({
 }) {
   return (
     <div
-      className={`relative overflow-hidden rounded-[32px] bg-[#0C110F] border border-white/5 p-8 md:p-10 flex flex-col group transition-all duration-300 hover:border-[#BC5FEF]/30 hover:shadow-[0_20px_60px_-20px_rgba(188,95,239,0.15)] ${className}`}
+      className={`relative overflow-hidden rounded-[32px] bg-[#0C110F] border border-white/5 p-8 md:p-10 flex flex-col group transition-all duration-300 hover:border-primary/30 hover:shadow-[0_20px_60px_-20px_var(--primary)] ${className}`}
     >
       {/* Header - Removed flex-1 so it doesn't push the visual down */}
       <div className="relative z-10 mb-6">
-        <div className="size-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-[#BC5FEF] group-hover:scale-110 transition-transform duration-300 group-hover:bg-[#BC5FEF] group-hover:text-white">
+        <div className="size-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform duration-300 group-hover:bg-primary group-hover:text-white">
           <Icon className="size-6" />
         </div>
         <h3 className="text-2xl font-bold text-white mb-3">{title}</h3>
@@ -45,7 +45,7 @@ function BentoCard({
       </div>
 
       {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#BC5FEF]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
     </div>
   );
 }
@@ -69,15 +69,15 @@ function CommitRevealVisual() {
 
       {/* Arrow Animation */}
       <div className="flex-1 h-[2px] bg-white/10 mx-4 md:mx-6 relative overflow-hidden rounded-full">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#BC5FEF] to-transparent w-1/2 -translate-x-full animate-[shimmer_2s_infinite]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary to-transparent w-1/2 -translate-x-full animate-[shimmer_2s_infinite]" />
       </div>
 
       {/* Step 2: Revealed (Reveal) */}
       <div className="flex flex-col items-center gap-3 z-10">
-        <div className="size-16 md:size-18 rounded-2xl bg-[#BC5FEF] text-white shadow-[0_0_30px_rgba(188,95,239,0.4)] flex items-center justify-center relative scale-110">
+        <div className="size-16 md:size-18 rounded-2xl bg-primary text-white shadow-[0_0_30px_var(--primary)] flex items-center justify-center relative scale-110">
           <Check className="size-8 md:size-10" />
         </div>
-        <span className="text-xs md:text-sm uppercase tracking-wider text-[#BC5FEF] font-bold">
+        <span className="text-xs md:text-sm uppercase tracking-wider text-primary font-bold">
           Reveal
         </span>
       </div>
@@ -91,8 +91,8 @@ function ConsensusVisual() {
     // Uses CSS variables for responsive orbit radius: 80px on mobile, 110px on desktop
     <div className="relative flex items-center justify-center w-full py-8 [--radius:80px] md:[--radius:110px]">
       {/* Central "Truth" Node - Responsive Size (16->20) */}
-      <div className="relative z-10 size-16 md:size-20 bg-gray-900 rounded-full flex items-center justify-center shadow-[0_0_50px_rgba(188,95,239,0.4)] border-[3px] border-[#BC5FEF] transition-all duration-500">
-        <Scale className="size-6 md:size-8 text-[#BC5FEF] transition-all duration-500" />
+      <div className="relative z-10 size-16 md:size-20 bg-gray-900 rounded-full flex items-center justify-center shadow-[0_0_50px_var(--primary)] border-[3px] border-primary transition-all duration-500">
+        <Scale className="size-6 md:size-8 text-primary transition-all duration-500" />
       </div>
 
       {/* Orbiting Juror Nodes */}
@@ -108,7 +108,7 @@ function ConsensusVisual() {
             }}
           >
             <div
-              className={`size-2 md:size-3 rounded-full ${i % 2 === 0 ? "bg-[#BC5FEF]" : "bg-gray-600"}`}
+              className={`size-2 md:size-3 rounded-full ${i % 2 === 0 ? "bg-primary" : "bg-gray-600"}`}
             />
           </div>
         ))}
@@ -116,7 +116,7 @@ function ConsensusVisual() {
 
       {/* Connecting Lines (Decorative) - Responsive Size (40->56) */}
       <div className="absolute inset-0 flex items-center justify-center opacity-20">
-        <div className="size-40 md:size-56 rounded-full border border-dashed border-[#BC5FEF] transition-all duration-500" />
+        <div className="size-40 md:size-56 rounded-full border border-dashed border-primary transition-all duration-500" />
       </div>
     </div>
   );
@@ -166,7 +166,7 @@ export function TechnicalFeatures() {
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight">
             The Courtroom <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#BC5FEF] to-purple-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">
               in Your Pocket
             </span>
           </h2>
@@ -197,11 +197,11 @@ export function TechnicalFeatures() {
           >
             {/* Staking Visual */}
             <div className="relative">
-              <div className="absolute inset-0 bg-[#BC5FEF] blur-[40px] opacity-20" />
-              <div className="relative size-24 rounded-full border-4 border-[#BC5FEF] flex items-center justify-center bg-[#0C110F]">
+              <div className="absolute inset-0 bg-primary blur-[40px] opacity-20" />
+              <div className="relative size-24 rounded-full border-4 border-primary flex items-center justify-center bg-[#0C110F]">
                 <ShieldCheck className="size-10 text-white" />
               </div>
-              <div className="absolute -bottom-2 -right-2 bg-[#1A1025] px-3 py-1 rounded-full border border-white/10 text-xs font-bold text-[#BC5FEF]">
+              <div className="absolute -bottom-2 -right-2 bg-[#1A1025] px-3 py-1 rounded-full border border-white/10 text-xs font-bold text-primary">
                 +12% APR
               </div>
             </div>

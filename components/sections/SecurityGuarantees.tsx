@@ -7,7 +7,7 @@ function MatrixLock() {
       {/* Background Matrix Text (Decorative) */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden select-none">
         <div
-          className="text-[10px] leading-3 font-mono text-[#BC5FEF]/20 text-center whitespace-pre-wrap opacity-30 blur-[0.5px]"
+          className="text-[10px] leading-3 font-mono text-primary/20 text-center whitespace-pre-wrap opacity-30 blur-[0.5px]"
           style={{ maskImage: 'radial-gradient(circle at center, black 0%, transparent 60%)' }}
         >
           {`0x71C7656EC7ab88b098defB751B7401B5f6d8976F
@@ -38,7 +38,7 @@ function MatrixLock() {
         ))}
 
         {/* Center Icon */}
-        <div className="size-10 text-[#BC5FEF]">
+        <div className="size-10 text-primary">
           <Shuffle className="size-full" />
         </div>
       </div>
@@ -72,14 +72,14 @@ export function SecurityGuarantees() {
             {/* Horizontal Line */}
             <div className="absolute top-1/2 left-0 right-0 h-px border-t border-dashed border-gray-800 -translate-y-1/2" />
             {/* Center Plus Icon */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[#BC5FEF] bg-black p-1">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-primary bg-black p-1">
               <Plus className="size-6" />
             </div>
           </div>
 
           {/* Feature 1: Random Selection */}
           <div className="p-8 md:p-12 md:pr-16 md:pb-16 border-b border-dashed border-gray-800 md:border-none">
-            <Shuffle className="size-8 text-[#BC5FEF] mb-6" />
+            <Shuffle className="size-8 text-primary mb-6" />
             <h3 className="text-lg font-bold mb-3">Random VRF Selection</h3>
             <p className="text-gray-400 leading-relaxed text-sm">
               Jurors are selected cryptographically. No one controls the court or the outcome.
@@ -88,7 +88,7 @@ export function SecurityGuarantees() {
 
           {/* Feature 2: On-Chain Execution */}
           <div className="p-8 md:p-12 md:pl-16 md:pb-16 border-b border-dashed border-gray-800 md:border-none">
-            <Gavel className="size-8 text-[#BC5FEF] mb-6" />
+            <Gavel className="size-8 text-primary mb-6" />
             <h3 className="text-lg font-bold mb-3">On-Chain Execution</h3>
             <p className="text-gray-400 leading-relaxed text-sm">
               Rulings are final. Smart contracts execute the verdict and transfers automatically.
@@ -97,7 +97,7 @@ export function SecurityGuarantees() {
 
           {/* Feature 3: Commit-Reveal */}
           <div className="p-8 md:p-12 md:pr-16 md:pt-16 border-b border-dashed border-gray-800 md:border-none">
-            <div className="flex items-center gap-1 mb-6 text-[#BC5FEF]">
+            <div className="flex items-center gap-1 mb-6 text-primary">
               <EyeOff className="size-8" />
             </div>
             <h3 className="text-lg font-bold mb-3">Commit-Reveal Voting</h3>
@@ -108,7 +108,7 @@ export function SecurityGuarantees() {
 
           {/* Feature 4: Appeals */}
           <div className="p-8 md:p-12 md:pl-16 md:pt-16">
-            <Scale className="size-8 text-[#BC5FEF] mb-6" />
+            <Scale className="size-8 text-primary mb-6" />
             <h3 className="text-lg font-bold mb-3">Scalable Appeals</h3>
             <p className="text-gray-400 leading-relaxed text-sm">
               Disputes can be appealed to a larger jury, ensuring accuracy scales with stakes.

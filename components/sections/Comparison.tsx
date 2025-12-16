@@ -22,7 +22,7 @@ export function Comparison() {
           <div className="grid grid-cols-3 border-b border-white/5 bg-white/5">
             <div className="p-6"></div>
             <div className="p-6 text-center text-lg font-bold text-gray-400">Traditional / Web2</div>
-            <div className="p-6 text-center text-lg font-bold text-[#BC5FEF]">Slice Protocol</div>
+            <div className="p-6 text-center text-lg font-bold text-primary">Slice Protocol</div>
           </div>
 
           {/* Row 1: Speed */}
@@ -48,7 +48,7 @@ export function Comparison() {
               </div>
             </div>
             <div className="p-6 text-center flex justify-center">
-              <div className="flex items-center gap-2 text-[#BC5FEF] text-sm font-bold">
+              <div className="flex items-center gap-2 text-primary text-sm font-bold">
                 <Check className="size-4" /> Math-Verified
               </div>
             </div>
@@ -60,7 +60,7 @@ export function Comparison() {
             <div className="p-6 text-center text-gray-500">Civic Duty (Unpaid)</div>
             <div className="p-6 text-center font-bold text-white flex items-center justify-center gap-2">
               <span>Gamified Rewards</span>
-              <span className="bg-[#BC5FEF]/20 text-[#BC5FEF] text-[10px] px-2 py-0.5 rounded-full">XP + APY</span>
+              <span className="bg-primary/20 text-primary text-[10px] px-2 py-0.5 rounded-full">XP + APY</span>
             </div>
           </div>
 

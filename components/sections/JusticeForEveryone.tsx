@@ -26,7 +26,7 @@ function FloatingPill({
 }) {
   // Base styles shared by both versions
   const baseStyles =
-    "flex items-center gap-2 px-4 py-2 md:px-5 md:py-2.5 rounded-full bg-[#1A1025] border border-[#BC5FEF]/30 text-[#BC5FEF] shadow-lg backdrop-blur-sm transition-transform hover:scale-105";
+    "flex items-center gap-2 px-4 py-2 md:px-5 md:py-2.5 rounded-full bg-[#1A1025] border border-primary/30 text-primary shadow-lg backdrop-blur-sm transition-transform hover:scale-105";
 
   if (isStatic) {
     return (
@@ -73,7 +73,7 @@ export function JusticeForEveryone() {
           <div className="lg:col-span-2 relative overflow-hidden rounded-[32px] bg-[#0C110F] p-8 md:p-12 flex flex-col justify-between group border border-gray-800/50 min-h-[400px] lg:min-h-0">
             {/* Content */}
             <div className="relative z-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#BC5FEF]/10 text-[#BC5FEF] text-xs font-bold uppercase tracking-wider mb-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-4">
                 <Gavel className="size-3" />
                 Start Earning
               </div>
@@ -87,7 +87,7 @@ export function JusticeForEveryone() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <button className="flex items-center gap-2 text-[#BC5FEF] font-bold text-sm hover:gap-3 transition-all">
+                <button className="flex items-center gap-2 text-primary font-bold text-sm hover:gap-3 transition-all">
                   Join the Jury <ArrowRight className="size-4" />
                 </button>
               </Link>
@@ -96,13 +96,13 @@ export function JusticeForEveryone() {
             {/* Abstract Visuals (Bottom Right) */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
               {/* Purple Curved Lines */}
-              <div className="absolute bottom-[-50px] right-[-50px] size-[400px] border-[1px] border-[#BC5FEF]/10 rounded-full" />
-              <div className="absolute bottom-[-20px] right-[-20px] size-[300px] border-[1px] border-[#BC5FEF]/20 rounded-full" />
+              <div className="absolute bottom-[-50px] right-[-50px] size-[400px] border-[1px] border-primary/10 rounded-full" />
+              <div className="absolute bottom-[-20px] right-[-20px] size-[300px] border-[1px] border-primary/20 rounded-full" />
 
               {/* Colorful Circles */}
               <div className="absolute bottom-8 md:bottom-12 right-8 md:right-12">
                 <div className="relative">
-                  <div className="size-14 md:size-16 rounded-full bg-[#BC5FEF] flex items-center justify-center shadow-[0_0_30px_rgba(188,95,239,0.4)] z-10 relative">
+                  <div className="size-14 md:size-16 rounded-full bg-primary flex items-center justify-center shadow-[0_0_30px_var(--primary)] z-10 relative">
                     <Coins className="text-white size-8" />
                   </div>
                   <div className="absolute top-8 -left-6 size-12 rounded-full bg-blue-500/20 blur-xl" />
@@ -115,7 +115,7 @@ export function JusticeForEveryone() {
           <div className="lg:col-span-3 relative overflow-hidden rounded-[32px] bg-[#0C110F] p-8 md:p-12 flex flex-col group border border-gray-800/50">
             {/* Content */}
             <div className="relative z-10 mb-8 lg:mb-auto">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 text-[#BC5FEF] text-xs font-bold uppercase tracking-wider mb-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-4">
                 <Code2 className="size-3" />
                 Integrate Instantly
               </div>
@@ -131,7 +131,7 @@ export function JusticeForEveryone() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <button className="flex items-center gap-2 text-[#BC5FEF] font-bold text-sm hover:gap-3 transition-all">
+                <button className="flex items-center gap-2 text-primary font-bold text-sm hover:gap-3 transition-all">
                   Read the Docs <ArrowRight className="size-4" />
                 </button>
               </Link>

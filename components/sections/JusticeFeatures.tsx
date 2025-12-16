@@ -39,17 +39,17 @@ export function JusticeFeatures() {
       className="relative bg-[#050505] py-32 overflow-hidden"
     >
       {/* 1. Subtle Ambient Glow (Modern & Clean) */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[500px] bg-[#BC5FEF] opacity-[0.03] blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[500px] bg-primary opacity-[0.03] blur-[120px] pointer-events-none" />
 
       <div className="container relative mx-auto max-w-7xl px-6">
         {/* 2. Header Section */}
         <div className="flex flex-col items-center text-center mb-24">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#BC5FEF]/20 bg-[#BC5FEF]/5 px-4 py-1.5 mb-8 backdrop-blur-md">
+          <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 mb-8 backdrop-blur-md">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#BC5FEF] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#BC5FEF]"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
             </span>
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#BC5FEF]">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-primary">
               The Justice Stack
             </span>
           </div>
@@ -73,15 +73,15 @@ export function JusticeFeatures() {
           {featureBlocks.map((feature, i) => (
             <div
               key={feature.title}
-              className="group relative flex flex-col rounded-3xl bg-[#0A0A0A] border border-white/[0.08] p-8 transition-all duration-300 hover:-translate-y-1 hover:border-[#BC5FEF]/30 hover:shadow-[0_20px_40px_-15px_rgba(188,95,239,0.1)]"
+              className="group relative flex flex-col rounded-3xl bg-[#0A0A0A] border border-white/[0.08] p-8 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_20px_40px_-15px_var(--primary)]"
             >
               {/* Icon Container */}
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/[0.03] border border-white/[0.05] text-[#BC5FEF] group-hover:bg-[#BC5FEF] group-hover:text-white transition-all duration-300">
+              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/[0.03] border border-white/[0.05] text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
                 <feature.icon className="h-6 w-6" />
               </div>
 
               {/* Content */}
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#BC5FEF] transition-colors">
+              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
                 {feature.title}
               </h3>
 
@@ -97,7 +97,7 @@ export function JusticeFeatures() {
                       key={item}
                       className="flex items-center gap-3 text-xs font-medium text-zinc-500 group-hover:text-zinc-300 transition-colors"
                     >
-                      <Check className="h-3.5 w-3.5 text-[#BC5FEF]" />
+                      <Check className="h-3.5 w-3.5 text-primary" />
                       {item}
                     </li>
                   ))}

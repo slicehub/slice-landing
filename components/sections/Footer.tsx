@@ -21,12 +21,12 @@ export function Footer() {
   return (
     <footer className="relative overflow-hidden bg-[#080808] text-white min-h-screen flex flex-col justify-center py-24 border-t border-white/5">
       {/* 1. Background Gradient Glow (From CTA) */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[#BC5FEF]/10 blur-[120px] pointer-events-none rounded-full" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-primary/10 blur-[120px] pointer-events-none rounded-full" />
 
       <div className="container relative z-10 mx-auto max-w-7xl px-6">
         {/* 2. The Final Content (CTA) - Merged Here */}
         <div className="flex flex-col items-center text-center mb-24">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#BC5FEF]/30 bg-[#BC5FEF]/10 px-4 py-2 text-xs uppercase tracking-[0.25em] text-[#BC5FEF] font-bold mb-8">
+          <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-xs uppercase tracking-[0.25em] text-primary font-bold mb-8">
             Ready to join?
           </div>
 
@@ -45,7 +45,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button className="h-14 px-8 rounded-full bg-[#BC5FEF] text-white text-lg font-bold hover:bg-[#a040d0] shadow-[0_0_40px_rgba(188,95,239,0.3)] transition-all hover:-translate-y-1">
+              <Button className="h-14 px-8 rounded-full bg-primary text-white text-lg font-bold hover:bg-[#a040d0] shadow-[0_0_40px_var(--primary)] transition-all hover:-translate-y-1">
                 Start Judging
               </Button>
             </Link>
@@ -56,7 +56,7 @@ export function Footer() {
             >
               <Button
                 variant="ghost"
-                className="h-14 px-8 rounded-full border border-white/10 bg-white/5 text-lg font-bold text-white hover:bg-white/10"
+                className="h-14 px-8 rounded-full border border-white/10 bg-white/5 text-lg font-bold text-white hover:bg-white/10 hover:text-white"
               >
                 Read the Docs <ArrowRight className="ml-2 size-5" />
               </Button>
@@ -333,8 +333,12 @@ export function Footer() {
               x2="0%"
               y2="100%"
             >
-              <stop offset="0%" stopColor="#BC5FEF" stopOpacity="0.8" />
-              <stop offset="100%" stopColor="#BC5FEF" stopOpacity="0.05" />
+              <stop offset="0%" stopColor="var(--primary)" stopOpacity="0.8" />
+              <stop
+                offset="100%"
+                stopColor="var(--primary)"
+                stopOpacity="0.05"
+              />
             </linearGradient>
           </defs>
           <text
