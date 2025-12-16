@@ -206,7 +206,7 @@ export function HeroSection() {
           </div>
 
           {/* Fade to transparent at bottom to blend with next section */}
-          <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#FAFAFA] to-transparent z-30" />
+          {/* Fade to transparent removed */}
 
         </div>
 
