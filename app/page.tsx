@@ -42,13 +42,13 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="container mx-auto max-w-7xl px-6 py-24 text-center">
-        <h1 className="text-5xl font-bold tracking-tight text-balance sm:text-6xl lg:text-7xl mb-6">
+      <section className="container mx-auto max-w-7xl px-6 pt-16 pb-32 text-center">
+        <h1 className="text-5xl font-bold tracking-tight text-balance sm:text-6xl lg:text-7xl mb-4">
           Multisig security for
           <br />
           your onchain assets
         </h1>
-        <p className="text-xl text-muted-foreground text-balance mx-auto max-w-2xl mb-12">
+        <p className="text-xl text-muted-foreground text-balance mx-auto max-w-2xl mb-10">
           The most trusted platform to manage digital assets on Ethereum and EVM chains
         </p>
         <div className="flex items-center justify-center gap-4 mb-16">
@@ -59,15 +59,15 @@ export default function Home() {
         </div>
 
         {/* Product Screenshot */}
-        <div className="relative mx-auto max-w-5xl">
-          <div className="rounded-xl border border-border bg-card shadow-2xl overflow-hidden">
+        <div className="relative mx-auto max-w-6xl scale-[1.12]">
+          <div className="rounded-2xl border border-border bg-card shadow-[0_25px_80px_rgba(0,0,0,0.18)] overflow-hidden">
             <img src="/modern-crypto-wallet-dashboard-interface-with-tran.jpg" alt="Safe Wallet Dashboard" className="w-full" />
           </div>
         </div>
 
         {/* Trusted By Logos */}
-        <div className="mt-24">
-          <p className="text-sm text-muted-foreground mb-8">Trusted by leading organizations</p>
+        <div className="mt-28">
+          <p className="text-sm text-muted-foreground mb-8 uppercase tracking-[0.2em]">Trusted by leading organizations</p>
           <div className="flex items-center justify-center gap-12 flex-wrap opacity-60">
             <div className="h-8 w-24 bg-muted rounded" />
             <div className="h-8 w-24 bg-muted rounded" />
@@ -79,16 +79,16 @@ export default function Home() {
       </section>
 
       {/* Dark Section - Control Center */}
-      <section className="bg-black text-white py-32">
+      <section className="bg-black text-white py-40">
         <div className="container mx-auto max-w-7xl px-6">
-          <h2 className="text-4xl font-bold text-center mb-6">Your treasury, full control</h2>
-          <p className="text-center text-gray-400 text-lg mb-16 max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-8">Your treasury, full control</h2>
+          <p className="text-center text-gray-400 text-lg mb-20 max-w-2xl mx-auto">
             Complete visibility and control over your digital assets with advanced security features
           </p>
 
           {/* Main Dashboard Visual */}
-          <div className="mb-20">
-            <div className="rounded-xl border border-gray-800 bg-[#0a0a0a] overflow-hidden shadow-2xl">
+          <div className="mb-24">
+            <div className="rounded-2xl border border-gray-800 bg-[#0a0a0a] overflow-hidden shadow-2xl">
               <img src="/dark-theme-control-panel-dashboard-with-graphs-and.jpg" alt="Control Panel" className="w-full" />
             </div>
           </div>
@@ -119,7 +119,7 @@ export default function Home() {
       </section>
 
       {/* Dark Section - Security Guarantees */}
-      <section className="bg-black text-white py-24 border-t border-gray-900">
+      <section className="bg-black text-white py-32 border-t border-gray-900">
         <div className="container mx-auto max-w-7xl px-6">
           <h2 className="text-3xl font-bold text-center mb-16">Enterprise-grade security</h2>
 
@@ -177,21 +177,65 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Comparison Section */}
+      <section className="py-24 bg-muted/40 border-y border-border">
+        <div className="container mx-auto max-w-6xl px-6">
+          <div className="text-center mb-16">
+            <p className="text-sm uppercase tracking-[0.25em] text-muted-foreground mb-4">Why teams choose Safe</p>
+            <h2 className="text-4xl font-bold">The proven way to coordinate assets</h2>
+          </div>
+          <div className="grid gap-6 md:grid-cols-4">
+            <div className="rounded-xl border border-border bg-card/70 p-6 flex flex-col gap-4">
+              <p className="text-sm uppercase tracking-wide text-muted-foreground">Multisig control</p>
+              <ul className="space-y-3 text-sm text-muted-foreground">
+                <li>Role-based approvals</li>
+                <li>Policy-enforced spending</li>
+                <li>Full audit history</li>
+              </ul>
+            </div>
+            <div className="rounded-xl border border-border bg-card/70 p-6 flex flex-col gap-4">
+              <p className="text-sm uppercase tracking-wide text-muted-foreground">Operations</p>
+              <ul className="space-y-3 text-sm text-muted-foreground">
+                <li>Batch execution</li>
+                <li>Simulation before send</li>
+                <li>Automated workflows</li>
+              </ul>
+            </div>
+            <div className="rounded-xl border-2 border-[#00e673] bg-white shadow-[0_20px_60px_rgba(0,0,0,0.08)] p-6 flex flex-col gap-4">
+              <p className="text-sm uppercase tracking-wide text-[#00b85a]">Safe advantage</p>
+              <ul className="space-y-3 text-sm text-foreground">
+                <li>Battle-tested smart contracts</li>
+                <li>Institutional access controls</li>
+                <li>Live ecosystem integrations</li>
+              </ul>
+            </div>
+            <div className="rounded-xl border border-border bg-card/70 p-6 flex flex-col gap-4">
+              <p className="text-sm uppercase tracking-wide text-muted-foreground">Alternatives</p>
+              <ul className="space-y-3 text-sm text-muted-foreground">
+                <li>Single-signer risk</li>
+                <li>Fragmented tooling</li>
+                <li>Limited transparency</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Light Section - Metrics */}
-      <section className="py-24 bg-muted/30">
+      <section className="py-28 bg-muted/30">
         <div className="container mx-auto max-w-7xl px-6">
-          <div className="grid gap-8 md:grid-cols-3 text-center">
-            <div>
-              <div className="text-5xl font-bold text-[#00e673] mb-2">$100B+</div>
-              <div className="text-muted-foreground">Assets Secured</div>
+          <div className="grid gap-10 md:grid-cols-3 text-center">
+            <div className="space-y-3">
+              <div className="text-6xl sm:text-7xl font-extrabold text-[#00e673]">$100B+</div>
+              <div className="text-sm text-muted-foreground uppercase tracking-[0.2em]">Assets Secured</div>
             </div>
-            <div>
-              <div className="text-5xl font-bold text-[#00e673] mb-2">12M+</div>
-              <div className="text-muted-foreground">Transactions Executed</div>
+            <div className="space-y-3">
+              <div className="text-6xl sm:text-7xl font-extrabold text-[#00e673]">12M+</div>
+              <div className="text-sm text-muted-foreground uppercase tracking-[0.2em]">Transactions Executed</div>
             </div>
-            <div>
-              <div className="text-5xl font-bold text-[#00e673] mb-2">50K+</div>
-              <div className="text-muted-foreground">Active Users</div>
+            <div className="space-y-3">
+              <div className="text-6xl sm:text-7xl font-extrabold text-[#00e673]">50K+</div>
+              <div className="text-sm text-muted-foreground uppercase tracking-[0.2em]">Active Users</div>
             </div>
           </div>
         </div>
@@ -200,80 +244,64 @@ export default function Home() {
       {/* Dark Section - Advanced Features */}
       <section className="bg-black text-white py-24">
         <div className="container mx-auto max-w-7xl px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Built for developers</h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-3">Built for developers</h2>
+            <p className="text-gray-400 text-base max-w-2xl mx-auto">
               Extend Safe with custom modules and integrate with your existing infrastructure
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 mb-12">
-            <Card className="bg-[#0a0a0a] border-gray-800 p-8">
-              <Server className="h-10 w-10 text-[#00e673] mb-4" />
-              <h3 className="text-2xl font-bold mb-3 text-white">Safe SDK</h3>
-              <p className="text-gray-400 mb-4">
+          <div className="grid gap-6 md:grid-cols-2 mb-10">
+            <Card className="bg-[#0a0a0a] border-gray-800 p-7">
+              <Server className="h-8 w-8 text-[#00e673] mb-3" />
+              <h3 className="text-xl font-semibold mb-2 text-white">Safe SDK</h3>
+              <p className="text-gray-400 mb-3 text-sm">
                 Integrate Safe into your application with our comprehensive TypeScript SDK
               </p>
-              <Button variant="link" className="text-[#00e673] p-0">
-                View Documentation <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              <Button variant="link" className="text-[#00e673] p-0 h-auto">View Documentation</Button>
             </Card>
-            <Card className="bg-[#0a0a0a] border-gray-800 p-8">
-              <Zap className="h-10 w-10 text-[#00e673] mb-4" />
-              <h3 className="text-2xl font-bold mb-3 text-white">Custom Modules</h3>
-              <p className="text-gray-400 mb-4">Build custom logic and automation with Safe's modular architecture</p>
-              <Button variant="link" className="text-[#00e673] p-0">
-                Explore Modules <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+            <Card className="bg-[#0a0a0a] border-gray-800 p-7">
+              <Zap className="h-8 w-8 text-[#00e673] mb-3" />
+              <h3 className="text-xl font-semibold mb-2 text-white">Custom Modules</h3>
+              <p className="text-gray-400 mb-3 text-sm">Build custom logic and automation with Safe's modular architecture</p>
+              <Button variant="link" className="text-[#00e673] p-0 h-auto">Explore Modules</Button>
             </Card>
           </div>
 
-          <div className="rounded-xl border border-gray-800 bg-[#0a0a0a] p-1 overflow-hidden">
+          <div className="rounded-xl border border-gray-800 bg-[#0a0a0a] p-0 overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.4)]">
             <img src="/code-editor-showing-smart-contract-integration.jpg" alt="Developer Tools" className="w-full rounded-lg" />
           </div>
         </div>
       </section>
 
       {/* Light Section - Testimonials */}
-      <section className="py-24">
+      <section className="py-28">
         <div className="container mx-auto max-w-7xl px-6">
           <h2 className="text-4xl font-bold text-center mb-16">What users say about us</h2>
 
-          <div className="grid gap-8 md:grid-cols-3">
-            <Card className="p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="h-12 w-12 rounded-full bg-muted" />
+          <div className="grid gap-10 md:grid-cols-2">
+            <Card className="p-10 shadow-lg">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="h-14 w-14 rounded-full bg-muted" />
                 <div>
-                  <div className="font-semibold">Alex Chen</div>
+                  <div className="font-semibold text-lg">Alex Chen</div>
                   <div className="text-sm text-muted-foreground">Treasury Lead, Protocol DAO</div>
                 </div>
               </div>
-              <p className="text-muted-foreground">
+              <p className="text-base text-muted-foreground leading-relaxed">
                 "Safe has been instrumental in managing our treasury. The multi-sig setup gives us peace of mind."
               </p>
             </Card>
-            <Card className="p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="h-12 w-12 rounded-full bg-muted" />
+            <Card className="p-10 shadow-lg">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="h-14 w-14 rounded-full bg-muted" />
                 <div>
-                  <div className="font-semibold">Sarah Johnson</div>
+                  <div className="font-semibold text-lg">Sarah Johnson</div>
                   <div className="text-sm text-muted-foreground">CTO, DeFi Startup</div>
                 </div>
               </div>
-              <p className="text-muted-foreground">
+              <p className="text-base text-muted-foreground leading-relaxed">
                 "The developer experience is excellent. We integrated Safe in less than a week."
-              </p>
-            </Card>
-            <Card className="p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="h-12 w-12 rounded-full bg-muted" />
-                <div>
-                  <div className="font-semibold">Michael Torres</div>
-                  <div className="text-sm text-muted-foreground">Security Engineer</div>
-                </div>
-              </div>
-              <p className="text-muted-foreground">
-                "The security features are unmatched. This is the gold standard for custody solutions."
               </p>
             </Card>
           </div>
@@ -331,6 +359,17 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Second Authority Peak */}
+      <section className="py-24 bg-black text-white border-t border-gray-900">
+        <div className="container mx-auto max-w-6xl px-6 text-center">
+          <p className="text-sm uppercase tracking-[0.3em] text-gray-400 mb-4">Institutional by default</p>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6">Security that already runs at scale</h2>
+          <p className="text-gray-400 max-w-3xl mx-auto text-lg">
+            Safe underpins the largest onchain treasuries, with rigorous audits, transparent governance, and a live ecosystem of integrations that keep operations accountable.
+          </p>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="py-24 bg-muted/30">
         <div className="container mx-auto max-w-7xl px-6 text-center">
@@ -349,16 +388,16 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-black text-white py-16">
+      <footer className="bg-black text-white py-24 border-t border-gray-900">
         <div className="container mx-auto max-w-7xl px-6">
-          <div className="grid gap-12 md:grid-cols-5 mb-12">
+          <div className="grid gap-16 md:grid-cols-5 mb-16">
             <div className="md:col-span-2">
-              <div className="text-2xl font-bold mb-4">Safe</div>
-              <p className="text-gray-400 max-w-xs">The most trusted platform to manage digital assets</p>
+              <div className="text-3xl font-bold mb-6">Safe</div>
+              <p className="text-gray-400 max-w-sm leading-relaxed">The most trusted platform to manage digital assets</p>
             </div>
             <div>
-              <div className="font-semibold mb-4">Product</div>
-              <ul className="space-y-2 text-gray-400">
+              <div className="font-semibold mb-5 uppercase tracking-wide text-sm">Product</div>
+              <ul className="space-y-3 text-gray-400">
                 <li>
                   <Link href="#" className="hover:text-white transition-colors">
                     Features
@@ -377,8 +416,8 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <div className="font-semibold mb-4">Developers</div>
-              <ul className="space-y-2 text-gray-400">
+              <div className="font-semibold mb-5 uppercase tracking-wide text-sm">Developers</div>
+              <ul className="space-y-3 text-gray-400">
                 <li>
                   <Link href="#" className="hover:text-white transition-colors">
                     Documentation
@@ -397,8 +436,8 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <div className="font-semibold mb-4">Company</div>
-              <ul className="space-y-2 text-gray-400">
+              <div className="font-semibold mb-5 uppercase tracking-wide text-sm">Company</div>
+              <ul className="space-y-3 text-gray-400">
                 <li>
                   <Link href="#" className="hover:text-white transition-colors">
                     About
@@ -420,7 +459,7 @@ export default function Home() {
 
           <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-gray-400 text-sm">© 2025 Safe. All rights reserved.</div>
-            <div className="flex gap-6 text-gray-400 text-sm">
+            <div className="flex gap-8 text-gray-400 text-sm">
               <Link href="#" className="hover:text-white transition-colors">
                 Terms
               </Link>
