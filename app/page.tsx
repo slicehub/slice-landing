@@ -25,7 +25,6 @@ export default function Home() {
         <AppsSection />
         <DevelopersSection />
         <MobileSection />
-        <FinalCTA />
       </main>
       <Footer />
     </div>

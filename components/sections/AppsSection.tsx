@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Gavel, Scale, ShieldCheck } from "lucide-react";
 
 // 1. Reusable App Icon Component
-// We mimic the specific logos using CSS shapes to avoid needing external images
+// Updated to use "Justice Purple" and abstract shapes representing contracts/markets
 function AppIcon({
     className,
     blur = false,
@@ -12,7 +12,7 @@ function AppIcon({
     className?: string,
     blur?: boolean,
     size?: "sm" | "md" | "lg",
-    type?: "stack" | "dots" | "world" | "blue" | "black-stack" | "placeholder"
+    type?: "stack" | "dots" | "world" | "purple" | "black-stack" | "placeholder" | "scales"
 }) {
     // Size variants
     const sizeClasses = {
@@ -31,18 +31,22 @@ function AppIcon({
     return (
         <div className={baseStyle}>
             {/* Logic to render different "logo" mimics */}
-            {type === "blue" && (
-                <div className="size-8 bg-blue-600 rounded-md" />
+
+            {/* 1. Purple Block (Abstract Protocol) */}
+            {type === "purple" && (
+                <div className="size-8 bg-[#BC5FEF] rounded-md shadow-sm" />
             )}
 
+            {/* 2. Stacked Lines (Documents/Evidence) */}
             {type === "stack" && (
                 <div className="flex flex-col gap-1 items-center">
-                    <div className="w-8 h-2 bg-gray-400 rounded-full opacity-60" />
+                    <div className="w-8 h-2 bg-gray-300 rounded-full opacity-60" />
                     <div className="w-10 h-2 bg-gray-400 rounded-full" />
-                    <div className="w-6 h-2 bg-gray-400 rounded-full opacity-80" />
+                    <div className="w-6 h-2 bg-[#BC5FEF] rounded-full opacity-80" />
                 </div>
             )}
 
+            {/* 3. Black Stack (Strict Contracts) */}
             {type === "black-stack" && (
                 <div className="flex flex-col gap-1 items-center">
                     <div className="w-6 h-2 bg-black rounded-full" />
@@ -51,22 +55,33 @@ function AppIcon({
                 </div>
             )}
 
+            {/* 4. Text Label (World/DAO) */}
             {type === "world" && (
-                <span className="font-bold text-xs tracking-tight text-gray-800">
-                    ◎ world
+                <span className="font-bold text-xs tracking-tight text-[#1A1025] flex flex-col items-center">
+                    <div className="size-2 rounded-full bg-[#BC5FEF] mb-1" />
+                    DAO
                 </span>
             )}
 
+            {/* 5. Dots Grid (Decentralization) */}
             {type === "dots" && (
                 <div className="grid grid-cols-3 gap-1">
                     {[...Array(9)].map((_, i) => (
-                        <div key={i} className={`size-1.5 rounded-full bg-black ${i % 2 === 0 ? "opacity-100" : "opacity-40"}`} />
+                        <div key={i} className={`size-1.5 rounded-full ${i % 2 === 0 ? "bg-[#BC5FEF]" : "bg-gray-300"} ${i % 2 === 0 ? "opacity-100" : "opacity-40"}`} />
                     ))}
                 </div>
             )}
 
+            {/* 6. Scales Icon (Justice) */}
+            {type === "scales" && (
+                <Scale className="size-8 text-gray-800 opacity-80" />
+            )}
+
+            {/* 7. Placeholder */}
             {type === "placeholder" && (
-                <div className="size-full bg-gray-50 rounded-2xl" />
+                <div className="size-full bg-gray-50 rounded-2xl flex items-center justify-center">
+                    <div className="size-6 rounded-full border-2 border-dashed border-gray-200" />
+                </div>
             )}
         </div>
     );
@@ -86,12 +101,12 @@ export function AppsSection() {
                 <AppIcon type="placeholder" className="top-32 left-[40%] opacity-40 blur-sm" size="sm" />
 
                 {/* Top Right Cluster */}
-                <AppIcon type="blue" className="top-20 right-[25%]" size="md" />
+                <AppIcon type="purple" className="top-20 right-[25%]" size="md" />
                 <AppIcon type="black-stack" className="top-60 right-[20%]" size="lg" />
                 <AppIcon type="placeholder" className="top-32 right-[15%]" size="sm" blur />
 
                 {/* Bottom Scatter */}
-                <AppIcon type="placeholder" className="bottom-32 left-[30%]" size="lg" blur />
+                <AppIcon type="scales" className="bottom-32 left-[30%]" size="lg" blur />
                 <AppIcon type="dots" className="bottom-10 left-[50%] -translate-x-1/2" size="md" />
                 <AppIcon type="placeholder" className="bottom-60 right-[25%]" size="md" />
 
@@ -99,23 +114,24 @@ export function AppsSection() {
 
             <div className="container relative z-20 mx-auto max-w-4xl px-6 text-center">
                 <h2 className="text-4xl md:text-6xl font-bold text-[#0D1A12] mb-6 tracking-tight">
-                    From Tools to Treasuries, <br /> It's All Safe
+                    From Grants to Gigs, <br /> It's All Covered
                 </h2>
                 <p className="text-lg text-gray-500 mb-10 max-w-xl mx-auto">
-                    Swap, Stake, Earn, Govern and more. Interact with 200+ apps integrated with Safe{"{Wallet}"}.
+                    Crowdfunding, Freelance Markets, Prediction Pools, and Escrows.
+                    Resolve any on-chain dispute with Slice protocol.
                 </p>
 
                 <div className="flex flex-wrap items-center justify-center gap-4">
                     <Button
                         variant="outline"
-                        className="h-12 px-6 rounded-lg border-gray-200 bg-white text-black font-semibold hover:bg-gray-50 hover:border-gray-300"
+                        className="h-12 px-6 rounded-lg border-gray-200 bg-white text-black font-semibold hover:bg-gray-50 hover:border-[#BC5FEF]/30 transition-all"
                     >
-                        Build on Safe
+                        Integrate Slice
                     </Button>
                     <Button
-                        className="h-12 px-6 rounded-lg bg-[#12FF80] text-black font-bold hover:bg-[#00e676] shadow-[0_4px_14px_rgba(18,255,128,0.3)]"
+                        className="h-12 px-6 rounded-lg bg-[#BC5FEF] text-white font-bold hover:bg-[#a54bd6] shadow-[0_4px_14px_rgba(18,255,128,0.3)] transition-transform hover:-translate-y-0.5"
                     >
-                        Discover Apps
+                        Start Judging
                     </Button>
                 </div>
             </div>

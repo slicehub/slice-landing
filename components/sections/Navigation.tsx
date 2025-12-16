@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Menu, X } from "lucide-react";
 
@@ -25,10 +26,16 @@ export default function Navigation() {
           {/* Logo Badge */}
           <Link
             href="/"
-            className="flex items-center gap-2 rounded-full border border-[#e8f0eb] bg-white px-3 py-1.5 text-sm font-bold text-[#0d1a12] shadow-sm transition-transform hover:scale-105"
+            className="flex items-center gap-2 rounded-full border border-gray-100 bg-white px-3 py-1.5 text-sm font-bold text-[#0d1a12] shadow-sm transition-transform hover:scale-105"
           >
-            <span className="size-2 rounded-full bg-[#12FF80] shadow-[0_0_10px_#12FF80]" />
-            Safe
+            <Image
+              src="/icons/slice-logo-transparent.svg"
+              alt="Slice Logo"
+              width={20}
+              height={20}
+              className="size-5"
+            />
+            Slice
           </Link>
 
           {/* Desktop Nav Links */}
@@ -37,7 +44,7 @@ export default function Navigation() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="hover:text-black transition-colors"
+                className="hover:text-[#BC5FEF] transition-colors"
               >
                 {item.name}
               </Link>
@@ -47,11 +54,11 @@ export default function Navigation() {
 
         {/* Right Actions */}
         <div className="flex items-center gap-2">
-          <Link href="#docs" className="hidden px-4 py-2 text-sm font-semibold text-[#0D1A12] hover:text-black transition-colors sm:inline">
+          <Link href="#docs" className="hidden px-4 py-2 text-sm font-semibold text-[#0D1A12] hover:text-[#BC5FEF] transition-colors sm:inline">
             Docs
           </Link>
-          <Button className="h-10 rounded-full bg-black hover:bg-black/80 text-white px-5 text-sm font-bold shadow-lg transition-all hover:scale-105 hidden sm:flex">
-            Launch Safe <ArrowRight className="ml-2 h-4 w-4" />
+          <Button className="h-10 rounded-full bg-black hover:bg-[#BC5FEF] text-white px-5 text-sm font-bold shadow-lg transition-all hover:scale-105 hidden sm:flex border border-white/10">
+            Launch App <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
 
           {/* Mobile Menu Toggle */}
@@ -86,8 +93,8 @@ export default function Navigation() {
             >
               Documentation
             </Link>
-            <Button className="w-full mt-2 h-12 rounded-xl bg-black hover:bg-black/80 text-white text-base font-bold shadow-lg">
-              Launch Safe <ArrowRight className="ml-2 h-4 w-4" />
+            <Button className="w-full mt-2 h-12 rounded-xl bg-black hover:bg-[#BC5FEF] text-white text-base font-bold shadow-lg">
+              Launch App <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
         </div>

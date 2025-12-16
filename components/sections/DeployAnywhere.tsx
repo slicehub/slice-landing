@@ -1,11 +1,9 @@
-import { CheckCircle2, Globe2, Plug, Smartphone } from "lucide-react";
-
-const chainBadges = ["Base", "OP Mainnet", "Arbitrum", "Polygon", "BNB Chain", "Avalanche", "Gnosis", "zkSync", "Linea", "Scroll"];
+import { Layers, Zap, Network, Share2, Fingerprint, MousePointer2 } from "lucide-react";
 
 export function DeployAnywhere() {
   return (
     <section id="ecosystem" className="relative overflow-hidden bg-[#FAFAFA] py-24 text-[#0D1A12]">
-      {/* Background Grid Pattern (Subtle) */}
+      {/* Background Grid Pattern */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.4]"
         style={{
@@ -19,87 +17,76 @@ export function DeployAnywhere() {
 
       <div className="container relative mx-auto max-w-6xl px-6">
         <div className="text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-xs uppercase tracking-[0.25em] text-gray-500 font-bold">
-            Every chain
+          <div className="inline-flex items-center gap-2 rounded-full border border-purple-100 bg-purple-50 px-4 py-2 text-xs uppercase tracking-[0.25em] text-[#BC5FEF] font-bold">
+            Chain Abstraction
           </div>
-          <h2 className="mt-8 text-4xl md:text-5xl font-extrabold tracking-tight">Deploy Safe on any chain</h2>
-          <p className="mt-4 text-xl text-gray-500 max-w-2xl mx-auto">Secure assets everywhere your team builds and deploys.</p>
+          <h2 className="mt-8 text-4xl md:text-5xl font-extrabold tracking-tight">One Interface. Any Chain.</h2>
+          <p className="mt-4 text-xl text-gray-500 max-w-2xl mx-auto">
+            Forget about bridging, gas tokens, and network switching. Slice abstracts the blockchain so you can focus on delivering justice.
+          </p>
         </div>
 
-        {/* Chain Badges - Curated List */}
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
-          {["Ethereum", "Base", "Optimism", "Arbitrum", "Polygon", "Gnosis"].map((chain, i) => (
-            <div
-              key={chain}
-              className="group flex items-center gap-3 rounded-xl border border-gray-100 bg-white px-5 py-3 text-sm font-bold text-[#0D1A12] shadow-sm transition-all hover:-translate-y-1 hover:border-[#12FF80] hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] cursor-default"
-            >
-              {/* Simulated Chain Icons */}
-              <div className={`size-6 rounded-full flex items-center justify-center text-[10px] text-white
-                  ${chain === "Ethereum" ? "bg-[#627EEA]" : ""}
-                  ${chain === "Base" ? "bg-[#0052FF]" : ""}
-                  ${chain === "Optimism" ? "bg-[#FF0420]" : ""}
-                  ${chain === "Arbitrum" ? "bg-[#2D374B]" : ""}
-                  ${chain === "Polygon" ? "bg-[#8247E5]" : ""}
-                  ${chain === "Gnosis" ? "bg-[#04795b]" : ""}
-              `}>
-                {chain[0]}
-              </div>
+        {/* Chain Badges (Simplified to show breadth without clutter) */}
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-4 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+          {["Ethereum", "Base", "Optimism", "Arbitrum", "Polygon", "Gnosis", "Scroll", "Linea"].map((chain, i) => (
+            <div key={chain} className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-gray-200 bg-white text-xs font-bold text-gray-500">
+              <div className="size-2 rounded-full bg-gray-300" />
               {chain}
             </div>
           ))}
-          <div className="px-4 py-2 text-sm font-semibold text-gray-400">
-            + 100 more
-          </div>
+          <div className="text-xs font-bold text-gray-400">+ 100 EVM Chains</div>
         </div>
 
-        {/* Features Grid */}
-        <div className="mt-16 grid gap-6 rounded-[32px] border border-gray-200 bg-white p-8 shadow-xl md:grid-cols-3">
-          <FeatureColumn
-            icon={Globe2}
-            title="Programmability"
-            items={["Build on open modules", "Automate actions", "Bring your policies"]}
+        {/* Features Grid - Focus on UX */}
+        <div className="mt-16 grid gap-8 md:grid-cols-3">
+
+          <UXFeature
+            icon={Fingerprint}
+            title="Universal Profile"
+            description="Build your reputation once. Your juror score, history, and staked assets are unified across every supported network."
           />
-          <FeatureColumn
-            icon={Smartphone}
-            title="Mobile"
-            items={["Native approvals", "Push notifications", "Biometric signing"]}
+
+          <UXFeature
+            icon={Zap}
+            title="Gasless Voting"
+            description="Never worry about having ETH for gas. The protocol handles transaction fees via meta-transactions, so you just sign and vote."
           />
-          <FeatureColumn
-            icon={Plug}
-            title="Integrations"
-            items={["Safe apps ready", "Wallet connectors", "MPC + AA friendly"]}
+
+          <UXFeature
+            icon={Share2}
+            title="Seamless Bridging"
+            description="Rewards are automatically aggregated. Withdraw your earnings to your preferred chain in a single click."
           />
+
         </div>
       </div>
     </section>
   );
 }
 
-function FeatureColumn({
+function UXFeature({
   title,
-  items,
+  description,
   icon: Icon,
 }: {
   title: string;
-  items: string[];
-  icon: typeof Globe2;
+  description: string;
+  icon: any;
 }) {
   return (
-    <div className="space-y-4 rounded-2xl border border-gray-100 bg-[#FAFAFA] p-8 transition-colors hover:bg-gray-50">
-      <div className="flex items-center gap-3 text-xl font-bold text-[#0D1A12]">
-        <div className="flex size-12 items-center justify-center rounded-full bg-white border border-gray-200 shadow-sm text-black">
-          <Icon className="h-5 w-5" />
+    <div className="group relative rounded-[32px] border border-gray-200 bg-white p-8 shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl hover:border-[#BC5FEF]/30 overflow-hidden">
+      {/* Hover Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#BC5FEF]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+
+      <div className="relative z-10 flex flex-col items-center text-center">
+        <div className="flex size-16 items-center justify-center rounded-2xl bg-[#FAFAFA] border border-gray-100 shadow-sm text-[#BC5FEF] mb-6 group-hover:scale-110 transition-transform">
+          <Icon className="h-8 w-8" />
         </div>
-        {title}
+        <h3 className="text-xl font-bold text-[#0D1A12] mb-3">{title}</h3>
+        <p className="text-gray-500 leading-relaxed">
+          {description}
+        </p>
       </div>
-      <ul className="space-y-3 pt-2 text-base text-gray-600">
-        {items.map((item) => (
-          <li key={item} className="flex items-center gap-3">
-            <CheckCircle2 className="h-5 w-5 text-[#12FF80] fill-black/5" />
-            {item}
-          </li>
-        ))}
-      </ul>
     </div>
   );
 }
