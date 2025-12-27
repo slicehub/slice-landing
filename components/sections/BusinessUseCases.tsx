@@ -3,10 +3,12 @@
 import {
   ShoppingCart,
   Briefcase,
-  ShieldCheck,
-  Scale,
   Wallet,
   FileText,
+  Umbrella,
+  AlertTriangle,
+  Code,
+  Users,
   ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
@@ -17,38 +19,48 @@ const useCases = [
   {
     icon: ShoppingCart,
     title: "Marketplaces",
-    subtitle: "(e-commerce, services, P2P)",
+    subtitle: "(E-commerce, P2P, Services)",
   },
   {
     icon: Briefcase,
-    title: "Freelancer and contractor platforms",
-    subtitle: "",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Escrow-based payments",
-    subtitle: "",
-  },
-  {
-    icon: Scale,
-    title: "Crowdfunding and milestone-based funding",
+    title: "Freelancer and Contractor Platforms",
     subtitle: "",
   },
   {
     icon: Wallet,
-    title: "Fintech wallets and payment platforms",
+    title: "Fintechs, Wallets, and Payment Platforms",
     subtitle: "",
   },
   {
     icon: FileText,
-    title: "Web3 and on-chain protocols",
+    title: "Web3 Platforms and On-chain Protocols",
+    subtitle: "",
+  },
+  {
+    icon: Umbrella,
+    title: "Micro-insurance and Micro-claims",
+    subtitle: "",
+  },
+  {
+    icon: AlertTriangle,
+    title: "Content Moderation and Platform Disputes",
+    subtitle: "",
+  },
+  {
+    icon: Code,
+    title: "Code Quality Evaluation and OSS Reward Distribution",
+    subtitle: "",
+  },
+  {
+    icon: Users,
+    title: "Governance and Collective Decision-Making",
     subtitle: "",
   },
 ];
 
 export function BusinessUseCases() {
   return (
-    <section className="relative bg-[#050505] py-24 md:py-32 overflow-hidden">
+    <section id="business-use-cases" className="relative bg-[#050505] py-24 md:py-32 overflow-hidden">
       {/* Subtle Ambient Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[500px] bg-primary opacity-[0.03] blur-[120px] pointer-events-none" />
 
@@ -72,11 +84,11 @@ export function BusinessUseCases() {
         </div>
 
         {/* Use Cases Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12 max-w-7xl mx-auto">
           {useCases.map((useCase, index) => (
             <div
               key={index}
-              className="group relative flex flex-col rounded-2xl bg-[#1A1025] border border-primary/20 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_20px_40px_-15px_var(--primary)]"
+              className="group relative flex flex-col rounded-2xl bg-[#1A1025] border border-primary/20 p-6 min-h-[180px] transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_20px_40px_-15px_var(--primary)]"
             >
               {/* Icon */}
               <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 border border-primary/20 text-white">
@@ -105,7 +117,7 @@ export function BusinessUseCases() {
             rel="noopener noreferrer"
           >
             <Button className="h-14 px-8 rounded-full bg-primary text-white text-lg font-bold hover:bg-[#a040d0] shadow-[0_0_40px_var(--primary)] transition-all">
-              Start Judging
+              Explore use cases
             </Button>
           </Link>
           <Link

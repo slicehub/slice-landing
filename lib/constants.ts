@@ -7,8 +7,8 @@ export const SLICE_LINKS = {
 };
 
 export const NAV_LINKS = [
-    { name: "Product", href: "#" },
-    { name: "Slice for Business", href: "#" },
+    { name: "Product", href: "#product" },
+    { name: "Slice for Business", href: "#slice-for-business" },
     { name: "Developers", href: "#developers" },
     { name: "Docs", href: "https://docs.slicehub.xyz/" },
 ];

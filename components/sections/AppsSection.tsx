@@ -1,8 +1,12 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Gavel, Scale, ShieldCheck } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { SLICE_LINKS } from "@/lib/constants";
+import { Particles } from "@/components/ui/particles";
 
 // 1. Reusable App Icon Component
 function AppIcon({
@@ -23,6 +27,19 @@ function AppIcon({
     | "placeholder"
     | "scales";
 }) {
+  // Generate random values only on client to avoid hydration mismatch
+  const [animationStyle, setAnimationStyle] = useState<{
+    animationDelay?: string;
+    animationDuration?: string;
+  }>({});
+
+  useEffect(() => {
+    setAnimationStyle({
+      animationDelay: `${Math.random() * 3}s`,
+      animationDuration: `${8 + Math.random() * 4}s`,
+    });
+  }, []);
+
   // Size variants
   const sizeClasses = {
     sm: "size-16",
@@ -33,11 +50,12 @@ function AppIcon({
   return (
     <div
       className={cn(
-        "absolute bg-white rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.06)] flex items-center justify-center border border-gray-100/50",
+        "absolute bg-white rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.06)] flex items-center justify-center border border-gray-100/50 animate-float",
         sizeClasses[size],
         blur ? "blur-[2px] opacity-60 scale-90" : "scale-100 opacity-100 z-10",
         className,
       )}
+      style={animationStyle}
     >
       {/* Logic to render different "logo" mimics */}
 
@@ -99,12 +117,22 @@ function AppIcon({
   );
 }
 
+
 export function AppsSection() {
   return (
     <section
       id="integrations"
       className="relative py-24 lg:py-64 bg-[#F9FAFB] overflow-hidden"
     >
+      {/* Particle Background */}
+      <Particles
+        className="absolute inset-0 z-0"
+        quantity={150}
+        ease={80}
+        color="#bc5fef"
+        size={0.4}
+        refresh
+      />
       {/* Container for the scattered icons - Hidden on Mobile to preserve readability */}
       <div className="absolute inset-0 max-w-7xl mx-auto pointer-events-none hidden md:block">
         {/* Top Left Cluster */}
@@ -169,11 +197,10 @@ export function AppsSection() {
 
       <div className="container relative z-20 mx-auto max-w-4xl px-6 text-center">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D1A12] mb-6 tracking-tight">
-          From Grants to Gigs, <br /> It's All Covered
+        Dispute Resolution for <br/>Digital Products
         </h2>
         <p className="text-base text-gray-500 mb-10 max-w-xl mx-auto">
-          Crowdfunding, Freelance Markets, Prediction Pools, and Escrows.
-          Resolve any on-chain dispute with Slice protocol.
+        Slice helps platforms resolve small, frequent disputes without support teams, manual reviews, or biased decisions.
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4">
@@ -190,12 +217,12 @@ export function AppsSection() {
             </Button>
           </Link>
           <Link
-            href={SLICE_LINKS.APP}
+            href="https://docs.slicehub.xyz/overview/use-cases"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Button className="h-12 px-6 rounded-lg bg-primary text-white font-bold shadow-[0_4px_14px_var(--primary)] transition-transform hover:-translate-y-0.5 w-full sm:w-auto">
-              Start Judging
+            Explore Use Cases
             </Button>
           </Link>
         </div>

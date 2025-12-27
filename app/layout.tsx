@@ -8,22 +8,23 @@ const manrope = Manrope({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Slice - Get Paid for Doing Justice",
+  title: "Slice - Dispute Resolution for Digital Platforms",
   description:
     "Join the decentralized jury. Resolve disputes for crowdfunding, escrows, and protocols. Earn rewards in a gamified, on-chain court.",
-  generator: "v0.app",
   icons: {
     icon: [
       {
-        url: "/icon-light-32x32.png",
+        url: "/icons/slice-logo-transparent.svg",
+        type: "image/svg+xml",
+      },
+      {
+        url: "/icons/slice-light-logo-transparent.svg",
         media: "(prefers-color-scheme: light)",
+        type: "image/svg+xml",
       },
       {
-        url: "/icon-dark-32x32.png",
+        url: "/icons/slice-logo-transparent.svg",
         media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
         type: "image/svg+xml",
       },
     ],

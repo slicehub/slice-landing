@@ -150,3 +150,88 @@
     display: none !important;
     background: transparent !important;
 }
+
+/* Particle and Float Animations for AppsSection */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px);
+    }
+    25% {
+        transform: translateY(-8px) translateX(4px);
+    }
+    50% {
+        transform: translateY(-4px) translateX(-2px);
+    }
+    75% {
+        transform: translateY(-12px) translateX(2px);
+    }
+}
+
+@keyframes particle {
+    0% {
+        transform: translateY(0) translateX(0) scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translateY(-100px) translateX(50px) scale(1.2);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-200px) translateX(100px) scale(0.8);
+        opacity: 0;
+    }
+}
+
+@keyframes particle-slow {
+    0% {
+        transform: translateY(0) translateX(0) scale(1);
+        opacity: 0.2;
+    }
+    50% {
+        transform: translateY(-150px) translateX(80px) scale(1.3);
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateY(-300px) translateX(150px) scale(0.7);
+        opacity: 0;
+    }
+}
+
+.animate-float {
+    animation: float ease-in-out infinite;
+}
+
+.animate-particle {
+    animation: particle linear infinite;
+}
+
+.animate-particle-slow {
+    animation: particle-slow linear infinite;
+}
+
+/* Marquee Animations */
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-100% - var(--gap)));
+    }
+}
+
+@keyframes marquee-vertical {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(calc(-100% - var(--gap)));
+    }
+}
+
+.animate-marquee {
+    animation: marquee var(--duration) linear infinite;
+}
+
+.animate-marquee-vertical {
+    animation: marquee-vertical var(--duration) linear infinite;
+}

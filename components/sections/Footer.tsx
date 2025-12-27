@@ -31,7 +31,7 @@ export function Footer() {
           </div>
 
           <h2 className="text-5xl md:text-6xl font-black tracking-tight mb-6">
-            Make justice your profession
+            Make justice
           </h2>
 
           <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-10">

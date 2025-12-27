@@ -1,33 +1,45 @@
-import { Scale, Lock, ShieldCheck, Zap, ArrowRight, Check } from "lucide-react";
+import { TrendingUp, Scale, Zap, Award, Check } from "lucide-react";
 
 const featureBlocks = [
   {
-    title: "Fair Selection",
-    description:
-      "Jurors are selected using verifiable randomness (VRF), preventing any party from influencing the court.",
-    bullets: ["Verifiable Randomness", "Sybil Resistance", "Unbiased Jury"],
+    title: "Built to scale disputes, not support teams",
+    description: "",
+    bullets: [
+      "Operational Efficiency: Offloads dispute resolution from your internal operations.",
+      "Zero Support Overhead: No manual reviews, team overload, or human bias.",
+      "Total Automation: External, consistent, and automatic case management.",
+    ],
+    icon: TrendingUp,
+  },
+  {
+    title: "Neutral by design",
+    description: "",
+    bullets: [
+      "Absolute Impartiality: Slice is independent and does not favor either party.",
+      "Cryptographic Randomness: Jurors are selected via cryptography to ensure independence.",
+      "Transparent Rules: Outcomes are based on clear, pre-defined regulations.",
+    ],
     icon: Scale,
   },
   {
-    title: "Private Voting",
-    description:
-      "Commit–reveal keeps votes hidden until the end, ensuring independent and honest decisions.",
-    bullets: ["Encrypted Votes", "No Copying", "Anti-Bribery"],
-    icon: Lock,
-  },
-  {
-    title: "Game Theory",
-    description:
-      "Incentives reward correct voting and penalize malicious behavior, aligning jurors with the truth.",
-    bullets: ["Staking Rewards", "Slashing Penalties", "Nash Equilibrium"],
-    icon: ShieldCheck,
-  },
-  {
-    title: "Auto-Execution",
-    description:
-      "Final rulings are enforced on-chain instantly, with no intermediaries involved.",
-    bullets: ["Trustless Finality", "Smart Contract Logic", "Zero Latency"],
+    title: "Predictable outcomes, automatic enforcement",
+    description: "",
+    bullets: [
+      "Instant Execution: Rulings are enforced immediately once reached.",
+      "Frictionless Process: No delays, intermediaries, or back-and-forth negotiations.",
+      "Smart Contract Security: Results are automatically enforced by code.",
+    ],
     icon: Zap,
+  },
+  {
+    title: "Incentives aligned with truth",
+    description: "",
+    bullets: [
+      "Truth Incentives: Participants are economically rewarded for honest decisions.",
+      "Anti-Manipulation: The system penalizes any attempt at fraud or manipulation.",
+      "Decentralized Trust: Total security without relying on a central authority.",
+    ],
+    icon: Award,
   },
 ];
 
@@ -54,17 +66,11 @@ export function JusticeFeatures() {
           </div>
 
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
-            Complexity Hidden, <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-white/40">
-              Truth Revealed.
-            </span>
+            Why Slices Work for Real Products
           </h2>
-
           <p className="max-w-2xl text-lg text-zinc-400 leading-relaxed">
-            Slice replaces expensive legal intermediaries with code. We combine
-            cryptography, game theory, and smart contracts to create a dispute
-            resolution system that is faster, cheaper, and fairer.
-          </p>
+          Slice helps products resolve disputes at scale without support overhead or bias, using an external and automated resolution system.
+        </p>
         </div>
 
         {/* Feature Grid */}
@@ -80,24 +86,20 @@ export function JusticeFeatures() {
               </div>
 
               {/* Content */}
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
+              <h3 className="text-xl font-bold text-white mb-6 group-hover:text-primary transition-colors">
                 {feature.title}
               </h3>
 
-              <p className="text-base text-zinc-400 leading-relaxed mb-8 flex-1">
-                {feature.description}
-              </p>
-
               {/* Bullets */}
-              <div className="pt-6 border-t border-white/[0.06]">
-                <ul className="space-y-3">
+              <div className="flex-1">
+                <ul className="space-y-4">
                   {feature.bullets.map((item) => (
                     <li
                       key={item}
-                      className="flex items-center gap-3 text-sm font-medium text-zinc-500 group-hover:text-zinc-300 transition-colors"
+                      className="flex items-start gap-3 text-sm font-medium text-zinc-400 group-hover:text-zinc-300 transition-colors leading-relaxed"
                     >
-                      <Check className="h-3.5 w-3.5 text-primary" />
-                      {item}
+                      <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                      <span>{item}</span>
                     </li>
                   ))}
                 </ul>

@@ -1,4 +1,5 @@
 import { Layers, Zap, Fingerprint, MousePointer2 } from "lucide-react";
+import Image from "next/image";
 
 export function ChainAbstraction() {
   return (
@@ -65,21 +66,27 @@ export function ChainAbstraction() {
 
           <div className="flex flex-wrap items-center justify-center gap-3 opacity-60 hover:opacity-100 transition-opacity duration-500">
             {[
-              "Ethereum",
-              "Base",
-              "Optimism",
-              "Arbitrum",
-              "Polygon",
-              "Gnosis",
-              "Scroll",
-              "Linea",
+              { name: "Ethereum", icon: "/icons/ethereum.png" },
+              { name: "Base", icon: "/icons/base.png" },
+              { name: "Optimism", icon: "/icons/optimism.png" },
+              { name: "Arbitrum", icon: "/icons/arbitrum.png" },
+              { name: "Polygon", icon: "/icons/polygon.png" },
+              { name: "Gnosis", icon: "/icons/gnosis.png" },
+              { name: "Scroll", icon: "/icons/scroll.png" },
+              { name: "Linea", icon: "/icons/linea.png" },
             ].map((chain) => (
               <div
-                key={chain}
+                key={chain.name}
                 className="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 bg-white text-xs font-bold text-gray-500 hover:border-primary/30 hover:text-primary transition-colors cursor-default"
               >
-                <div className="size-1.5 rounded-full bg-gray-300 group-hover:bg-primary" />
-                {chain}
+                <Image
+                  src={chain.icon}
+                  alt={chain.name}
+                  width={16}
+                  height={16}
+                  className="rounded-full"
+                />
+                {chain.name}
               </div>
             ))}
             <div className="px-3 py-2 text-xs font-bold text-gray-400">
@@ -102,16 +109,21 @@ function UXFeature({
   icon: any;
 }) {
   return (
-    <div className="group relative rounded-[32px] border border-gray-200 bg-white p-8 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-primary/30 overflow-hidden">
-      {/* Hover Gradient using Primary Variable */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+    <div className="group relative rounded-[32px] border border-gray-200 bg-white p-8 shadow-xl transition-all duration-500 ease-out hover:-translate-y-3 hover:scale-[1.02] hover:shadow-2xl hover:border-primary/50 overflow-hidden">
+      {/* Animated Glow Effect */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+      {/* Shimmer Effect */}
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
+      </div>
 
       <div className="relative z-10 flex flex-col items-center text-center">
-        <div className="flex size-16 items-center justify-center rounded-2xl bg-[#FAFAFA] border border-gray-100 shadow-sm text-primary mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-300">
-          <Icon className="h-8 w-8" />
+        <div className="flex size-16 items-center justify-center rounded-2xl bg-[#FAFAFA] border border-gray-100 shadow-sm text-primary mb-6 group-hover:scale-125 group-hover:rotate-3 group-hover:bg-primary group-hover:text-white transition-all duration-500 ease-out">
+          <Icon className="h-8 w-8 group-hover:scale-110 transition-transform duration-500" />
         </div>
-        <h3 className="text-xl font-bold text-[#0D1A12] mb-3">{title}</h3>
-        <p className="text-gray-500 leading-relaxed">{description}</p>
+        <h3 className="text-xl font-bold text-[#0D1A12] mb-3 group-hover:text-primary transition-colors duration-300">{title}</h3>
+        <p className="text-gray-500 leading-relaxed group-hover:text-gray-600 transition-colors duration-300">{description}</p>
       </div>
     </div>
   );
