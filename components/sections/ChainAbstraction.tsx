@@ -89,9 +89,27 @@ export function ChainAbstraction() {
                 {chain.name}
               </div>
             ))}
-            <div className="px-3 py-2 text-xs font-bold text-gray-400">
-              + 100 EVM Chains
-            </div>
+          </div>
+          
+          <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-8 mt-16">
+            Available on
+          </p>
+          
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            {[
+              { name: "Base Miniapp" },
+              { name: "Farcaster Miniapp" },
+              { name: "Lemon Miniapp" },
+              { name: "Beexo Miniapp" },
+              { name: "Web App" },
+            ].map((platform) => (
+              <div
+                key={platform.name}
+                className="px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-xs font-bold text-primary hover:border-primary/40 hover:bg-primary/10 transition-colors cursor-default shadow-[0_0_15px_rgba(188,95,239,0.1)]"
+              >
+                {platform.name}
+              </div>
+            ))}
           </div>
         </div>
       </div>
