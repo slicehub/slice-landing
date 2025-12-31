@@ -78,7 +78,7 @@ export function JusticeFeatures() {
           {featureBlocks.map((feature) => (
             <div
               key={feature.title}
-              className="group relative flex flex-col rounded-3xl bg-[#0A0A0A] border border-white/[0.08] p-8 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_20px_40px_-15px_var(--primary)]"
+              className="group relative flex flex-col rounded-3xl bg-[#0A0A0A] border border-white/[0.08] p-8 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_8px_32px_-8px_rgba(160,64,208,0.12)]"
             >
               {/* Icon */}
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/[0.03] border border-white/[0.05] text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">

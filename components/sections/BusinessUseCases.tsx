@@ -88,7 +88,7 @@ export function BusinessUseCases() {
           {useCases.map((useCase, index) => (
             <div
               key={index}
-              className="group relative flex flex-col rounded-2xl bg-[#1A1025] border border-primary/20 p-6 min-h-[180px] transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_20px_40px_-15px_var(--primary)]"
+              className="group relative flex flex-col rounded-2xl bg-[#1A1025] border border-primary/20 p-6 min-h-[180px] transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_8px_32px_-8px_rgba(160,64,208,0.12)]"
             >
               {/* Icon */}
               <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 border border-primary/20 text-white">
