@@ -61,9 +61,9 @@ export function ChainAbstraction() {
         {/* Footer: Tech Stack (Subtle, confirming robustness without clutter) */}
         <div className="mt-24 pt-10 border-t border-gray-100 text-center">
           <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-8">
-            Available on
+            Soon Available on
           </p>
-          
+
           <div className="flex flex-wrap items-center justify-center gap-3">
             {[
               { name: "Base Miniapp" },
@@ -109,8 +109,12 @@ function UXFeature({
         <div className="flex size-16 items-center justify-center rounded-2xl bg-[#FAFAFA] border border-gray-100 shadow-sm text-primary mb-6 group-hover:scale-125 group-hover:rotate-3 group-hover:bg-primary group-hover:text-white transition-all duration-500 ease-out">
           <Icon className="h-8 w-8 group-hover:scale-110 transition-transform duration-500" />
         </div>
-        <h3 className="text-xl font-bold text-[#0D1A12] mb-3 group-hover:text-primary transition-colors duration-300">{title}</h3>
-        <p className="text-gray-500 leading-relaxed group-hover:text-gray-600 transition-colors duration-300">{description}</p>
+        <h3 className="text-xl font-bold text-[#0D1A12] mb-3 group-hover:text-primary transition-colors duration-300">
+          {title}
+        </h3>
+        <p className="text-gray-500 leading-relaxed group-hover:text-gray-600 transition-colors duration-300">
+          {description}
+        </p>
       </div>
     </div>
   );

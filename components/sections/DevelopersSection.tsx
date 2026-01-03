@@ -1,5 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Check, Terminal, FileCode2, Braces, Layers } from "lucide-react";
+import {
+  ArrowRight,
+  Check,
+  Terminal,
+  FileCode2,
+  Braces,
+  Layers,
+} from "lucide-react";
 import Link from "next/link";
 import { SLICE_LINKS } from "@/lib/constants";
 
@@ -15,7 +22,9 @@ function CodeWindow() {
           <div className="size-3 rounded-full bg-[#FFBD2E]" />
           <div className="size-3 rounded-full bg-[#27C93F]" />
         </div>
-        <div className="ml-4 text-xs text-gray-400 font-medium">resolve-dispute.ts</div>
+        <div className="ml-4 text-xs text-gray-400 font-medium">
+          resolve-dispute.ts
+        </div>
       </div>
 
       {/* Code Content */}
@@ -35,7 +44,9 @@ function CodeWindow() {
             <span className="text-[#9CDCFE]">signer</span>
             <span className="text-[#D4D4D4]">);</span>
             {"\n\n"}
-            <span className="text-[#6A9955]">// Step 1: External contract creates a dispute</span>
+            <span className="text-[#6A9955]">
+              // Step 1: External contract creates a dispute
+            </span>
             {"\n"}
             <span className="text-[#569CD6]">const</span>{" "}
             <span className="text-[#9CDCFE]">tx</span>{" "}
@@ -71,7 +82,9 @@ function CodeWindow() {
             {"\n"}
             <span className="text-[#D4D4D4]">{`});`}</span>
             {"\n\n"}
-            <span className="text-[#6A9955]">// Step 2: Protocol waits for ruling</span>
+            <span className="text-[#6A9955]">
+              // Step 2: Protocol waits for ruling
+            </span>
             {"\n"}
             <span className="text-[#9CDCFE]">sliceProtocol</span>
             <span className="text-[#D4D4D4]">.</span>
@@ -121,57 +134,72 @@ function CodeWindow() {
   );
 }
 
-
 export function DevelopersSection() {
   return (
-    <section id="developers" className="py-32 bg-white text-[#0D1A12] relative overflow-hidden">
-
+    <section
+      id="developers"
+      className="py-32 bg-white text-[#0D1A12] relative overflow-hidden"
+    >
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gray-50 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2" />
 
       <div className="container mx-auto max-w-7xl px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-
           {/* Left: Content */}
           <div>
             <div className="inline-flex items-center gap-2 rounded-lg bg-black text-white px-3 py-1 text-xs font-bold mb-8">
               <Terminal className="size-3" />
-              <span>Format. TypeScript</span>
+              <span>Typescript SDK</span>
             </div>
 
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6 leading-[1.1]">
-              Built for <br />
-              any <br />
-              <span className="text-primary drop-shadow-sm selection:bg-primary selection:text-white">Protocol</span>
+              Built for any <br />
+              <span className="text-primary drop-shadow-sm selection:bg-primary selection:text-white">
+                Protocol
+              </span>
             </h2>
 
             <p className="text-lg text-gray-500 mb-10 max-w-lg leading-relaxed">
-              Escrows, Freelance Markets, and DAOs use Slice to resolve disagreements in real time.
+              Escrows, Freelance Markets, and DAOs use Slice to resolve
+              disagreements in real time.
             </p>
 
             <div className="space-y-6 mb-10">
               {[
                 { icon: Braces, text: "Easy SDK Integration" },
                 { icon: Layers, text: "Arbitration as a Service" },
-                { icon: FileCode2, text: "Plug-and-Play Justice" }
+                { icon: FileCode2, text: "Plug-and-Play Justice" },
               ].map((feature, i) => (
                 <div key={i} className="flex items-center gap-4 group">
                   <div className="size-10 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors duration-300">
                     <feature.icon className="size-5 text-gray-600 group-hover:text-white transition-colors duration-300" />
                   </div>
-                  <span className="text-lg font-semibold text-gray-700">{feature.text}</span>
+                  <span className="text-lg font-semibold text-gray-700">
+                    {feature.text}
+                  </span>
                 </div>
               ))}
             </div>
 
             <div className="flex gap-4">
-              <Link href={SLICE_LINKS.DOCS} target="_blank" rel="noopener noreferrer">
+              <Link
+                href={SLICE_LINKS.DOCS}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button className="h-12 px-12 rounded-full bg-[#1A1025] text-white text-base font-bold hover:bg-primary transition-colors">
                   Read the Docs
                 </Button>
               </Link>
-              <Link href={SLICE_LINKS.GITHUB} target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" className="h-12 px-6 rounded-full border-gray-200 text-gray-600 text-base font-bold hover:bg-white hover:text-[#0D1A12] hover:border-gray-300 bg-white/50 backdrop-blur-sm">
+              <Link
+                href={SLICE_LINKS.GITHUB}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  variant="outline"
+                  className="h-12 px-6 rounded-full border-gray-200 text-gray-600 text-base font-bold hover:bg-white hover:text-[#0D1A12] hover:border-gray-300 bg-white/50 backdrop-blur-sm"
+                >
                   Github
                 </Button>
               </Link>
@@ -189,12 +217,15 @@ export function DevelopersSection() {
                 <Check className="size-6 text-green-600" />
               </div>
               <div>
-                <div className="text-xs text-gray-400 font-bold uppercase tracking-wider">Status</div>
-                <div className="text-sm font-bold text-[#0D1A12]">Running on Mainnet</div>
+                <div className="text-xs text-gray-400 font-bold uppercase tracking-wider">
+                  Status
+                </div>
+                <div className="text-sm font-bold text-[#0D1A12]">
+                  Coming soon
+                </div>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>

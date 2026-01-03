@@ -20,6 +20,13 @@ import {
   Maximize2,
   CheckCircle2,
   MoreHorizontal,
+  Code2,
+  Users,
+  AlertCircle,
+  ShieldCheck,
+  Search,
+  Zap,
+  Plus,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -36,10 +43,12 @@ export function HeroSection() {
             The Standard for Decentralized Justice
           </h4>
           <h1 className="text-5xl md:text-[3.5rem] font-extrabold tracking-[-2px] text-[#0D1A12] mb-6 leading-[1.1]">
-            Dispute resolution <br />for digital platforms
+            Dispute resolution <br />
+            for digital platforms
           </h1>
           <p className="text-xl text-gray-500 max-w-2xl mx-auto mb-10">
-            Resolve payments, escrow, and agreement disputes with an independent, on-chain jury without building arbitration in-house.
+            Resolve payments, escrow, and agreement disputes on-chain without
+            building arbitration in-house.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
@@ -48,21 +57,24 @@ export function HeroSection() {
               rel="noopener noreferrer"
             >
               <Button className="h-12 px-12 gap-2 rounded-full bg-[#1A1025] text-white text-base font-bold hover:bg-primary transition-colors min-w-[180px] group">
-                Integrate Slice <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+                Integrate Slice{" "}
+                <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </Link>
             <Link
               href="#mobile"
               onClick={(e) => {
                 e.preventDefault();
-                document.querySelector('#mobile')?.scrollIntoView({ behavior: 'smooth' });
+                document
+                  .querySelector("#mobile")
+                  ?.scrollIntoView({ behavior: "smooth" });
               }}
             >
               <Button
                 variant="outline"
                 className="h-12 px-6 rounded-full border-gray-200 text-gray-600 text-base font-bold hover:bg-white hover:text-[#0D1A12] hover:border-gray-300 bg-white/50 backdrop-blur-sm"
               >
-                Start Judging 
+                Start Judging
               </Button>
             </Link>
           </div>
@@ -82,7 +94,7 @@ export function HeroSection() {
 
           {/* Mobile Phone (Front Layer - Offset Left) */}
           <div
-            className="absolute top-16 sm:top-18 left-1/2 -translate-x-1/2 
+            className="absolute top-16 sm:top-18 left-1/2 -translate-x-1/2
                           md:left-1/2 md:-translate-x-[500px]
                           scale-[0.9] sm:scale-[0.92] md:scale-[0.9] lg:scale-[0.9]
                           origin-center z-30"
@@ -122,36 +134,40 @@ function HeroPhone() {
   useEffect(() => {
     const handleScroll = () => {
       if (!scrollContainerRef.current) return;
-      
+
       // Get scroll position relative to hero section
-      const heroSection = document.querySelector('section');
+      const heroSection = document.querySelector("section");
       if (!heroSection) return;
-      
+
       const rect = heroSection.getBoundingClientRect();
       const windowHeight = window.innerHeight;
-      
+
       // Calculate scroll progress (0 to 1) when hero section is in viewport
       let scrollProgress = 0;
       if (rect.top < windowHeight && rect.bottom > 0) {
-        const visibleHeight = Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
-        scrollProgress = Math.max(0, Math.min(1, (windowHeight - rect.top) / (windowHeight + rect.height)));
+        const visibleHeight =
+          Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
+        scrollProgress = Math.max(
+          0,
+          Math.min(1, (windowHeight - rect.top) / (windowHeight + rect.height)),
+        );
       }
-      
+
       // Animate scroll: max scroll is the difference between scrollHeight and clientHeight
       const container = scrollContainerRef.current;
       const maxScroll = container.scrollHeight - container.clientHeight;
       const targetScroll = scrollProgress * maxScroll * 0.3; // Limit to 30% of max scroll for subtle effect
-      
+
       container.scrollTo({
         top: targetScroll,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll(); // Initial call
-    
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -163,13 +179,15 @@ function HeroPhone() {
             <ChevronLeft className="size-5" />
           </button>
         </div>
-        <div 
-          ref={scrollContainerRef} 
+        <div
+          ref={scrollContainerRef}
           className="flex-1 overflow-y-auto scrollbar-hide pb-8 px-4 space-y-4"
-          style={{
-            scrollbarWidth: 'none',
-            msOverflowStyle: 'none',
-          } as React.CSSProperties}
+          style={
+            {
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+            } as React.CSSProperties
+          }
         >
           <div className="bg-white rounded-[24px] p-5 flex items-center justify-between shadow-[0_2px_10px_rgba(0,0,0,0.02)] border border-gray-100">
             <div className="flex items-center gap-2 font-bold text-[#0D1A12]">
@@ -247,23 +265,32 @@ function HeroPhone() {
               </div>
             </div>
           </div>
-          
+
           {/* Additional content for scroll effect */}
           <div className="bg-white rounded-[32px] p-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 space-y-4">
-            <h4 className="text-base font-bold text-[#0D1A12]">Additional Evidence</h4>
+            <h4 className="text-base font-bold text-[#0D1A12]">
+              Additional Evidence
+            </h4>
             <p className="text-sm text-gray-500 leading-relaxed">
-              Additional documentation and screenshots have been provided to support the claim.
+              Additional documentation and screenshots have been provided to
+              support the claim.
             </p>
           </div>
-          
+
           <div className="bg-white rounded-[32px] p-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 space-y-4">
-            <h4 className="text-base font-bold text-[#0D1A12]">Voting Options</h4>
+            <h4 className="text-base font-bold text-[#0D1A12]">
+              Voting Options
+            </h4>
             <div className="space-y-2">
               <button className="w-full text-left px-4 py-3 rounded-xl border-2 border-gray-200 hover:border-primary hover:bg-primary/5 transition-colors">
-                <span className="font-semibold text-[#0D1A12]">Favor Plaintiff</span>
+                <span className="font-semibold text-[#0D1A12]">
+                  Favor Plaintiff
+                </span>
               </button>
               <button className="w-full text-left px-4 py-3 rounded-xl border-2 border-gray-200 hover:border-primary hover:bg-primary/5 transition-colors">
-                <span className="font-semibold text-[#0D1A12]">Favor Defendant</span>
+                <span className="font-semibold text-[#0D1A12]">
+                  Favor Defendant
+                </span>
               </button>
             </div>
           </div>
@@ -273,17 +300,15 @@ function HeroPhone() {
   );
 }
 
-// --- 3. The Professional Juror Dashboard UI ---
+// --- 3. The Professional Platform Dashboard UI ---
 function HeroDashboard() {
   return (
-    <div className="w-[1000px] h-[650px] bg-white rounded-[32px] border border-gray-200 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.12)] overflow-hidden flex font-sans">
+    <div className="w-[1000px] h-[650px] bg-white rounded-[32px] border border-gray-200 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.12)] overflow-hidden flex font-sans select-none">
       {/* Sidebar */}
       <div className="w-[240px] bg-white border-r border-gray-100 flex flex-col p-6 rounded-l-[32px]">
-        <div className="flex items-center gap-3 mb-12 pl-2">
+        <div className="flex items-center gap-3 mb-10 pl-2">
           {/* Logo Container */}
           <div className="size-9 bg-black rounded-xl flex items-center justify-center shadow-lg shadow-purple-200">
-            {/* Replaced Icon with SVG Image */}
-            {/* 'brightness-0 invert' makes the black SVG white to match the design */}
             <img
               src="/icons/slice-logo-transparent.svg"
               alt="Slice"
@@ -295,12 +320,14 @@ function HeroDashboard() {
             Slice
           </span>
         </div>
+
         <div className="space-y-1.5 flex-1">
           {[
             { name: "Overview", icon: LayoutDashboard, active: true },
-            { name: "My Disputes", icon: Gavel, active: false, badge: "3" },
-            { name: "Staking", icon: Wallet, active: false },
-            { name: "History", icon: FileText, active: false },
+            { name: "Disputes", icon: Gavel, active: false, badge: "12" },
+            { name: "Integration", icon: Code2, active: false },
+            { name: "Users", icon: Users, active: false },
+            { name: "Settings", icon: Settings, active: false },
           ].map((item) => (
             <button
               key={item.name}
@@ -312,7 +339,11 @@ function HeroDashboard() {
             >
               <div className="flex items-center gap-3">
                 <item.icon
-                  className={`size-5 ${item.active ? "text-[#9333EA]" : "text-gray-400 group-hover:text-gray-600"}`}
+                  className={`size-5 ${
+                    item.active
+                      ? "text-[#9333EA]"
+                      : "text-gray-400 group-hover:text-gray-600"
+                  }`}
                 />
                 {item.name}
               </div>
@@ -325,134 +356,144 @@ function HeroDashboard() {
           ))}
         </div>
 
+        {/* Platform Profile */}
         <div className="mt-auto border-t border-gray-100 pt-6">
           <div className="flex items-center gap-3 px-2 mb-4">
-            <div className="size-10 rounded-full bg-gray-100 border border-gray-200 overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=faces"
-                alt="Juror"
-                className="size-full object-cover"
-              />
+            <div className="size-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm shadow-inner">
+              M
             </div>
             <div className="flex-1 min-w-0">
               <div className="text-sm font-bold text-[#0D1A12] truncate">
-                Alex Juror
+                MarketPlace Inc.
               </div>
-              <div className="text-xs text-gray-400 truncate">0x82...39a1</div>
+              <div className="text-xs text-gray-400 truncate">
+                Pro Plan • Active
+              </div>
             </div>
-            <button className="text-gray-400 hover:text-gray-600">
-              <Settings className="size-4" />
-            </button>
           </div>
         </div>
       </div>
 
       {/* Main Content */}
       <div className="flex-1 bg-[#FAFAFA] p-10 flex flex-col overflow-hidden rounded-r-[32px]">
+        {/* Header */}
         <div className="flex justify-between items-end mb-10">
           <div>
             <h2 className="text-3xl font-extrabold text-[#0D1A12] tracking-tight mb-2">
-              Juror Dashboard
+              Platform Dashboard
             </h2>
             <p className="text-gray-500 font-medium">
-              Manage your stakes, review cases, and earn rewards.
+              Monitor active disputes and manage protocol integration.
             </p>
           </div>
-          <Button className="rounded-full bg-[#0D1A12] text-white px-6 h-11 font-bold shadow-lg hover:bg-primary transition-colors">
-            Staking Pool
+          <Button className="rounded-full bg-[#0D1A12] text-white px-6 h-11 font-bold shadow-lg hover:bg-primary transition-colors flex items-center gap-2">
+            <Plus className="size-4" />
+            Create Dispute
           </Button>
         </div>
 
+        {/* Metrics Grid */}
         <div className="grid grid-cols-3 gap-6 mb-10">
-          {/* Card 1 */}
-          <div className="bg-white p-6 rounded-[24px] border border-gray-100 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+          {/* Card 1: Active Cases */}
+          <div className="bg-white p-6 rounded-[24px] border border-gray-100 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow group">
             <div className="flex justify-between items-start mb-6">
-              <div className="size-12 rounded-2xl bg-purple-50 flex items-center justify-center text-primary">
-                <Award className="size-6" />
+              <div className="size-12 rounded-2xl bg-purple-50 flex items-center justify-center text-purple-600 group-hover:scale-110 transition-transform">
+                <AlertCircle className="size-6" />
               </div>
-              <span className="bg-gray-100 text-gray-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
-                Senior
+              <span className="bg-purple-50 text-purple-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+                Action Needed
               </span>
             </div>
             <div>
               <div className="text-4xl font-extrabold text-[#0D1A12] tracking-tight mb-1">
-                Level 42
+                14
               </div>
               <div className="text-sm text-gray-400 font-medium">
-                Top 5% of jurors
+                Active disputes
               </div>
             </div>
           </div>
-          {/* Card 2 */}
-          <div className="bg-white p-6 rounded-[24px] border border-gray-100 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+
+          {/* Card 2: Protected Volume */}
+          <div className="bg-white p-6 rounded-[24px] border border-gray-100 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow group">
             <div className="flex justify-between items-start mb-6">
-              <div className="size-12 rounded-2xl bg-green-50 flex items-center justify-center text-green-600">
-                <TrendingUp className="size-6" />
+              <div className="size-12 rounded-2xl bg-green-50 flex items-center justify-center text-green-600 group-hover:scale-110 transition-transform">
+                <ShieldCheck className="size-6" />
               </div>
               <span className="bg-green-50 text-green-700 text-xs font-bold px-3 py-1 rounded-full">
-                +12%
+                +8.4%
               </span>
             </div>
             <div>
               <div className="text-4xl font-extrabold text-[#0D1A12] tracking-tight mb-1">
-                $1,450
+                $124k
               </div>
               <div className="text-sm text-gray-400 font-medium">
-                Total Earnings (USDC)
+                Volume protected (30d)
               </div>
             </div>
           </div>
-          {/* Card 3 */}
-          <div className="bg-white p-6 rounded-[24px] border border-gray-100 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+
+          {/* Card 3: Avg Resolution Time */}
+          <div className="bg-white p-6 rounded-[24px] border border-gray-100 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow group">
             <div className="flex justify-between items-start mb-6">
-              <div className="size-12 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600">
-                <CheckCircle2 className="size-6" />
+              <div className="size-12 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:scale-110 transition-transform">
+                <Zap className="size-6" />
               </div>
             </div>
             <div>
               <div className="text-4xl font-extrabold text-[#0D1A12] tracking-tight mb-1">
-                98.5%
+                ~28h
               </div>
               <div className="text-sm text-gray-400 font-medium">
-                Accuracy Score
+                Avg. resolution time
               </div>
             </div>
           </div>
         </div>
 
-        {/* Table */}
-        <div className="bg-white rounded-[28px] border border-gray-100 shadow-sm flex-1 p-2">
+        {/* Dispute Table */}
+        <div className="bg-white rounded-[28px] border border-gray-100 shadow-sm flex-1 p-2 flex flex-col">
           <div className="flex items-center justify-between px-6 py-5 border-b border-gray-50">
-            <h3 className="font-bold text-gray-900 text-lg">Recent Rulings</h3>
+            <div className="flex items-center gap-3">
+              <h3 className="font-bold text-gray-900 text-lg">Recent Cases</h3>
+              <div className="bg-gray-100 text-gray-400 rounded-lg p-1.5 cursor-pointer hover:bg-gray-200 transition-colors">
+                <Search className="size-4" />
+              </div>
+            </div>
             <button className="text-sm font-semibold text-primary hover:bg-purple-50 px-3 py-1.5 rounded-lg transition-colors">
               View All
             </button>
           </div>
-          <div className="p-2 space-y-1">
+
+          <div className="p-2 space-y-1 overflow-y-auto">
             {[
               {
-                title: "Prediction Market: Election Result",
+                title: "Refund: Item Not Received",
+                parties: "Alice vs. BobStore",
                 id: "#4028",
-                reward: "+$45.00",
-                time: "2h ago",
-                status: "Resolved",
-                type: "Market",
+                amount: "$1,200",
+                time: "2h left",
+                status: "Evidence",
+                statusColor: "text-blue-600 bg-blue-50",
               },
               {
-                title: "Freelance Escrow: Logo Design",
+                title: "Service Quality Dispute",
+                parties: "TechCorp vs. DevX",
                 id: "#3992",
-                reward: "+$120.00",
-                time: "1d ago",
-                status: "Resolved",
-                type: "Escrow",
+                amount: "$450.00",
+                time: "Voting",
+                status: "Voting",
+                statusColor: "text-purple-600 bg-purple-50",
               },
               {
-                title: "Grant Milestone: DeFi Protocol",
+                title: "Damaged Goods Claim",
+                parties: "User99 vs. Logistics",
                 id: "#3821",
-                reward: "Pending",
-                time: "3d ago",
-                status: "Voting",
-                type: "Grant",
+                amount: "$85.00",
+                time: "Resolved",
+                status: "Resolved",
+                statusColor: "text-green-600 bg-green-50",
               },
             ].map((item, i) => (
               <div
@@ -460,13 +501,15 @@ function HeroDashboard() {
                 className="flex items-center justify-between p-4 hover:bg-[#FAFAFA] rounded-2xl transition-colors cursor-pointer group"
               >
                 <div className="flex items-center gap-4">
-                  <div className="size-10 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-400 font-bold group-hover:bg-white group-hover:border-primary group-hover:text-primary transition-all">
-                    {item.type === "Market" && (
-                      <TrendingUp className="size-5" />
-                    )}
-                    {item.type === "Escrow" && <User className="size-5" />}
-                    {item.type === "Grant" && <Award className="size-5" />}
+                  {/* Status Icon */}
+                  <div
+                    className={`size-10 rounded-full border border-opacity-10 flex items-center justify-center font-bold transition-all ${item.statusColor.replace("text-", "border-").replace("bg-", "bg-opacity-20 ")}`}
+                  >
+                    <FileText
+                      className={`size-5 ${item.statusColor.split(" ")[0]}`}
+                    />
                   </div>
+
                   <div>
                     <div className="flex items-center gap-2">
                       <span className="font-bold text-[#0D1A12] text-sm">
@@ -477,21 +520,23 @@ function HeroDashboard() {
                       </span>
                     </div>
                     <div className="text-xs text-gray-400 mt-1 flex items-center gap-2">
-                      {item.time}
-                      <span className="size-0.5 rounded-full bg-gray-300" />
-                      <span
-                        className={`${item.status === "Voting" ? "text-orange-500" : "text-gray-500"}`}
-                      >
-                        {item.status}
+                      <span className="font-medium text-gray-500">
+                        {item.parties}
                       </span>
+                      <span className="size-0.5 rounded-full bg-gray-300" />
+                      <span>{item.time}</span>
                     </div>
                   </div>
                 </div>
+
                 <div className="flex items-center gap-6">
                   <div
-                    className={`text-sm font-bold ${item.reward === "Pending" ? "text-gray-400" : "text-green-600 bg-green-50 px-3 py-1 rounded-full"}`}
+                    className={`text-xs font-bold px-3 py-1 rounded-full ${item.statusColor}`}
                   >
-                    {item.reward}
+                    {item.status}
+                  </div>
+                  <div className="text-sm font-bold text-[#0D1A12] w-16 text-right">
+                    {item.amount}
                   </div>
                   <button className="p-2 text-gray-300 hover:text-gray-600">
                     <MoreHorizontal className="size-5" />

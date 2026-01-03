@@ -8,7 +8,10 @@ function MatrixLock() {
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden select-none">
         <div
           className="text-[8px] leading-3 font-mono text-primary/15 text-center whitespace-pre-wrap opacity-20 blur-[0.5px]"
-          style={{ maskImage: 'radial-gradient(circle at center, black 0%, transparent 60%)' }}
+          style={{
+            maskImage:
+              "radial-gradient(circle at center, black 0%, transparent 60%)",
+          }}
         >
           {`0x71C7656EC7ab88b098defB751B7401B5f6d8976F
             c8912301384013401348102348012834012830481230
@@ -30,9 +33,9 @@ function MatrixLock() {
             key={i}
             className="absolute w-0.5 h-1 bg-gray-400"
             style={{
-              top: '50%',
-              left: '50%',
-              transform: `translate(-50%, -50%) rotate(${i * 30}deg) translateY(-32px)`
+              top: "50%",
+              left: "50%",
+              transform: `translate(-50%, -50%) rotate(${i * 30}deg) translateY(-32px)`,
             }}
           />
         ))}
@@ -48,25 +51,28 @@ function MatrixLock() {
 
 export function SecurityGuarantees() {
   return (
-    <section id="product" className="bg-[#FAFAFA] text-[#0D1A12] py-20 overflow-hidden">
+    <section
+      id="product"
+      className="bg-[#FAFAFA] text-[#0D1A12] py-20 overflow-hidden"
+    >
       <div className="container mx-auto max-w-5xl px-6 relative">
-
         {/* Top Visual Section */}
         <MatrixLock />
 
         {/* Headings */}
         <div className="text-center max-w-2xl mx-auto mb-16 relative z-10">
           <h2 className="text-4xl md:text-[2.5rem] font-extrabold tracking-[-2px] text-[#0D1A12] mb-6 leading-[1.1]">
-          A Neutral Dispute Resolution Protocol
+            A Neutral Dispute Resolution Protocol
           </h2>
           <p className="text-lg text-gray-500 max-w-2xl mx-auto">
-            Slice provides a neutral, external system where conflicts are evaluated and resolved through clear rules, economic incentives, and automatic execution. No biased arbitrators, just math.
+            A fair court for the digital age. Slice settles disputes
+            automatically using code and clear incentives, removing human bias
+            from the equation.{" "}
           </p>
         </div>
 
         {/* The Crosshair Feature Grid */}
         <div className="relative grid grid-cols-1 md:grid-cols-2 gap-0">
-
           {/* Desktop Crosshair Lines (Absolute Positioned) */}
           <div className="absolute inset-0 pointer-events-none hidden md:block">
             {/* Vertical Line */}
@@ -84,7 +90,8 @@ export function SecurityGuarantees() {
             <Shuffle className="size-6 text-primary mb-4" />
             <h3 className="text-base font-bold mb-2">Random VRF Selection</h3>
             <p className="text-gray-600 leading-relaxed text-sm">
-              Jurors are selected cryptographically. No one controls the court or the outcome.
+              Jurors are selected cryptographically. No one controls the court
+              or the outcome.
             </p>
           </div>
 
@@ -93,7 +100,8 @@ export function SecurityGuarantees() {
             <Gavel className="size-6 text-primary mb-4" />
             <h3 className="text-base font-bold mb-2">On-Chain Execution</h3>
             <p className="text-gray-600 leading-relaxed text-sm">
-              Rulings are final. Smart contracts execute the verdict and transfers automatically.
+              Rulings are final. Smart contracts execute the verdict and
+              transfers automatically.
             </p>
           </div>
 
@@ -102,9 +110,12 @@ export function SecurityGuarantees() {
             <div className="flex items-center gap-1 mb-4 text-primary">
               <EyeOff className="size-6" />
             </div>
-            <h3 className="text-base font-bold mb-2">Private Voting with Economic Incentives</h3>
+            <h3 className="text-base font-bold mb-2">
+              Private Voting with Economic Incentives
+            </h3>
             <p className="text-gray-600 leading-relaxed text-sm">
-              With Commit Reveal Voting, you win by being honest to the truth, not by following the crowd.
+              With Commit Reveal Voting, you win by being honest to the truth,
+              not by following the crowd.
             </p>
           </div>
 
@@ -113,10 +124,10 @@ export function SecurityGuarantees() {
             <Scale className="size-6 text-primary mb-4" />
             <h3 className="text-base font-bold mb-2">Scalable Appeals</h3>
             <p className="text-gray-600 leading-relaxed text-sm">
-              Disputes can be appealed to a larger jury, ensuring accuracy scales with stakes.
+              Disputes can be appealed to a larger jury, ensuring accuracy
+              scales with stakes.
             </p>
           </div>
-
         </div>
       </div>
     </section>

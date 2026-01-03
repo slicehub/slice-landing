@@ -1,45 +1,32 @@
-import { TrendingUp, Scale, Zap, Award, Check } from "lucide-react";
+import { TrendingUp, Scale, Zap, Check } from "lucide-react";
 
 const featureBlocks = [
   {
     title: "Built to scale disputes, not support teams",
-    description: "",
     bullets: [
-      "Operational Efficiency: Offloads dispute resolution from your internal operations.",
-      "Zero Support Overhead: No manual reviews, team overload, or human bias.",
-      "Total Automation: External, consistent, and automatic case management.",
+      "Zero manual reviews or support overhead",
+      "Automated and consistent dispute handling",
+      "Works across payments, escrow, and agreements",
     ],
     icon: TrendingUp,
   },
   {
-    title: "Neutral by design",
-    description: "",
+    title: "Neutral by design — no admins, no bias",
     bullets: [
-      "Absolute Impartiality: Slice is independent and does not favor either party.",
-      "Cryptographic Randomness: Jurors are selected via cryptography to ensure independence.",
-      "Transparent Rules: Outcomes are based on clear, pre-defined regulations.",
+      "Jurors selected randomly from an open pool",
+      "No party, platform, or admin can influence outcomes",
+      "Jurors are economically incentivized to vote honestly",
     ],
     icon: Scale,
   },
   {
-    title: "Predictable outcomes, automatic enforcement",
-    description: "",
+    title: "Automatic rulings — enforced on-chain",
     bullets: [
-      "Instant Execution: Rulings are enforced immediately once reached.",
-      "Frictionless Process: No delays, intermediaries, or back-and-forth negotiations.",
-      "Smart Contract Security: Results are automatically enforced by code.",
+      "Final rulings execute automatically on-chain",
+      "Funds and state changes settle without intermediaries",
+      "Outcomes are verifiable and irreversible",
     ],
     icon: Zap,
-  },
-  {
-    title: "Incentives aligned with truth",
-    description: "",
-    bullets: [
-      "Truth Incentives: Participants are economically rewarded for honest decisions.",
-      "Anti-Manipulation: The system penalizes any attempt at fraud or manipulation.",
-      "Decentralized Trust: Total security without relying on a central authority.",
-    ],
-    icon: Award,
   },
 ];
 
@@ -66,15 +53,16 @@ export function JusticeFeatures() {
           </div>
 
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
-            Why Slices Work for Real Products
+            Why Slice works for real products
           </h2>
           <p className="max-w-2xl text-lg text-zinc-400 leading-relaxed">
-          Slice helps products resolve disputes at scale without support overhead or bias, using an external and automated resolution system.
-        </p>
+            Slice helps products resolve disputes at scale without support
+            overhead or bias, using an external and automated resolution system.
+          </p>
         </div>
 
         {/* Feature Grid */}
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {featureBlocks.map((feature) => (
             <div
               key={feature.title}

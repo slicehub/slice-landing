@@ -70,7 +70,10 @@ function PhoneFrame({
 
 export function MobileSection() {
   return (
-    <section id="mobile" className="relative pt-24 md:pt-32 pb-0 overflow-hidden bg-gradient-to-t from-gray-100 via-gray-50 to-white">
+    <section
+      id="mobile"
+      className="relative pt-24 md:pt-32 pb-0 overflow-hidden bg-gradient-to-t from-gray-100 via-gray-50 to-white"
+    >
       <div className="container relative z-10 mx-auto max-w-7xl px-6 text-center">
         {/* Header Content */}
         <div className="mx-auto max-w-2xl mb-16 md:mb-24">
@@ -84,24 +87,24 @@ export function MobileSection() {
 
           <div className="flex flex-wrap justify-center gap-4">
             <Button className="h-12 px-6 rounded-lg bg-white border border-gray-200 text-black hover:bg-gray-50 shadow-sm transition-all hover:-translate-y-0.5">
-              <Image 
-                src="/icons/ios.png" 
-                alt="iOS" 
-                width={20} 
-                height={20} 
+              <Image
+                src="/icons/ios.png"
+                alt="iOS"
+                width={20}
+                height={20}
                 className="mr-2"
               />
-              Download on iOS
+              Soon on iOS
             </Button>
             <Button className="h-12 px-6 rounded-lg bg-white border border-gray-200 text-black hover:bg-gray-50 shadow-sm transition-all hover:-translate-y-0.5">
-              <Image 
-                src="/icons/android.png" 
-                alt="Android" 
-                width={20} 
-                height={20} 
+              <Image
+                src="/icons/android.png"
+                alt="Android"
+                width={20}
+                height={20}
                 className="mr-2"
               />
-              Download on Android
+              Soon on Android
             </Button>
           </div>
         </div>
